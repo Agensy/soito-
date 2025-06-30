@@ -1,684 +1,337 @@
 "use client"
 
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import {
-  Building2,
-  Users,
-  Award,
-  TrendingUp,
-  MapPin,
-  Phone,
-  Mail,
-  MessageCircle,
-  Instagram,
-  Linkedin,
-  Facebook,
-  ArrowRight,
-  CheckCircle,
-  Target,
-  Eye,
-  Heart,
-} from "lucide-react"
-import Image from "next/image"
-import Link from "next/link"
 import { NavigationMenu } from "@/components/navigation-menu"
-import { useTheme } from "@/components/theme-provider"
+import { LuxuryHero } from "@/components/luxury/luxury-hero"
+import { LuxurySection } from "@/components/luxury/luxury-section"
+import { LuxuryCard } from "@/components/luxury/luxury-card"
+import { LuxuryStats } from "@/components/luxury/luxury-stats"
+import { LuxuryForm } from "@/components/luxury/luxury-form"
+import { LuxuryGallery } from "@/components/luxury/luxury-gallery"
+import { LuxuryProjectsSection } from "@/components/luxury/luxury-projects-section"
+import { LuxuryPartnersSection } from "@/components/luxury/luxury-partners-section"
+import { Building2, Users, TrendingUp, Award, Phone, Mail, MapPin, ArrowRight, Play } from "lucide-react"
 
-export default function SoitoInstitucional() {
-  const { theme } = useTheme()
+export default function HomePage() {
+  const statsData = [
+    {
+      value: "15+",
+      label: "Anos de Experiência",
+      icon: <Award className="w-8 h-8" />,
+      description: "No mercado imobiliário",
+    },
+    {
+      value: "500+",
+      label: "Projetos Entregues",
+      icon: <Building2 className="w-8 h-8" />,
+      description: "Empreendimentos de sucesso",
+    },
+    {
+      value: "10K+",
+      label: "Clientes Satisfeitos",
+      icon: <Users className="w-8 h-8" />,
+      description: "Famílias realizadas",
+    },
+    {
+      value: "98%",
+      label: "Taxa de Satisfação",
+      icon: <TrendingUp className="w-8 h-8" />,
+      description: "Aprovação dos clientes",
+    },
+  ]
+
+  const galleryImages = [
+    {
+      src: "/modern-apartment-building.png",
+      alt: "Edifício Residencial Moderno",
+      title: "Arquitetura Contemporânea",
+      description: "Projetos que combinam elegância e funcionalidade",
+    },
+    {
+      src: "/luxury-lobby.png",
+      alt: "Lobby de Luxo",
+      title: "Ambientes Sofisticados",
+      description: "Espaços pensados para o seu conforto",
+    },
+    {
+      src: "/rooftop-pool.png",
+      alt: "Piscina na Cobertura",
+      title: "Lazer Exclusivo",
+      description: "Áreas de lazer premium para toda família",
+    },
+    {
+      src: "/modern-office-meeting.png",
+      alt: "Escritório Moderno",
+      title: "Espaços Corporativos",
+      description: "Ambientes profissionais de alto padrão",
+    },
+    {
+      src: "/sustainable-building.png",
+      alt: "Edifício Sustentável",
+      title: "Sustentabilidade",
+      description: "Construções eco-friendly e eficientes",
+    },
+    {
+      src: "/gourmet-area.png",
+      alt: "Área Gourmet",
+      title: "Espaços Gourmet",
+      description: "Ambientes perfeitos para entretenimento",
+    },
+  ]
+
+  const contactFields = [
+    {
+      name: "name",
+      label: "Nome Completo",
+      type: "text" as const,
+      placeholder: "Seu nome completo",
+      required: true,
+    },
+    {
+      name: "email",
+      label: "E-mail",
+      type: "email" as const,
+      placeholder: "seu@email.com",
+      required: true,
+    },
+    {
+      name: "phone",
+      label: "Telefone",
+      type: "tel" as const,
+      placeholder: "(11) 99999-9999",
+      required: true,
+    },
+    {
+      name: "interest",
+      label: "Interesse",
+      type: "text" as const,
+      placeholder: "Tipo de imóvel ou investimento",
+      required: false,
+    },
+    {
+      name: "message",
+      label: "Mensagem",
+      type: "textarea" as const,
+      placeholder: "Conte-nos mais sobre seus objetivos...",
+      required: false,
+    },
+  ]
+
+  const handleContactSubmit = (formData: FormData) => {
+    console.log("Form submitted:", Object.fromEntries(formData))
+    // Aqui você implementaria o envio do formulário
+  }
 
   return (
-    <div
-      className={`min-h-screen transition-colors ${theme === "dark" ? "bg-black text-white" : "bg-white text-black"}`}
-    >
-      {/* Header */}
+    <main className="min-h-screen">
+      {/* Navigation Menu */}
       <NavigationMenu />
 
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        <div className="relative z-10 text-center max-w-4xl mx-auto px-4">
-          <h1
-            className={`text-5xl md:text-7xl font-bold mb-6 leading-tight ${
-              theme === "dark" ? "text-white" : "text-black"
-            }`}
-          >
-            Construindo mais que imóveis.
-            <span className="block text-[#BFA86B]">Construindo histórias.</span>
-          </h1>
-          <p
-            className={`text-xl md:text-2xl mb-8 max-w-2xl mx-auto ${
-              theme === "dark" ? "text-gray-300" : "text-gray-600"
-            }`}
-          >
-            Transformamos terrenos vazios em legados concretos, gerando valor e realizando sonhos há mais de uma década.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-[#BFA86B] text-black hover:bg-[#BFA86B]/90 text-lg px-8 py-4" asChild>
-              <Link href="#empreendimentos">
-                Conheça Nossos Empreendimentos
-                <ArrowRight className="w-5 h-5 ml-2" />
-              </Link>
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className={`border-[#BFA86B] text-[#BFA86B] hover:bg-[#BFA86B] text-lg px-8 py-4 ${
-                theme === "dark" ? "hover:text-black" : "hover:text-white"
-              }`}
-              asChild
-            >
-              <Link href="#contato">Fale Conosco</Link>
-            </Button>
-          </div>
-        </div>
-      </section>
+      <LuxuryHero
+        badge="Excelência em Empreendimentos Imobiliários"
+        title={
+          <span className="luxury-text-gradient">
+            SOITO
+            <br />
+            <span className="text-white">INC</span>
+          </span>
+        }
+        subtitle="Transformamos sonhos em realidade através de empreendimentos imobiliários de alto padrão, conectando investidores visionários a oportunidades únicas no mercado."
+        backgroundImage="/images/hero-bg.png"
+        primaryAction={{
+          label: "Explorar Oportunidades",
+          onClick: () => console.log("Explorar clicked"),
+          icon: <ArrowRight className="w-5 h-5 mr-2" />,
+        }}
+        secondaryAction={{
+          label: "Assistir Apresentação",
+          onClick: () => console.log("Video clicked"),
+          icon: <Play className="w-5 h-5 mr-2" />,
+        }}
+      />
 
-      {/* Quem Somos */}
-      <section id="sobre" className={`py-20 ${theme === "dark" ? "bg-[#0B0B0B]" : "bg-gray-50"}`}>
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className={`text-4xl md:text-5xl font-bold mb-6 ${theme === "dark" ? "text-white" : "text-black"}`}>
-                Nossa <span className="text-[#BFA86B]">História</span>
-              </h2>
-              <p className={`text-lg mb-8 leading-relaxed ${theme === "dark" ? "text-gray-300" : "text-gray-600"}`}>
-                Há mais de 15 anos no mercado, a SOITO INC se consolidou como referência em investimentos imobiliários
-                concretos. Nossa visão vai além do terreno vazio - enxergamos oportunidades onde outros veem apenas
-                espaço.
-              </p>
-              <div className="grid grid-cols-2 gap-6">
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-[#BFA86B] mb-2">15+</div>
-                  <div className={`text-sm ${theme === "dark" ? "text-gray-400" : "text-gray-500"}`}>
-                    Anos de atuação
-                  </div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-[#BFA86B] mb-2">25</div>
-                  <div className={`text-sm ${theme === "dark" ? "text-gray-400" : "text-gray-500"}`}>
-                    Empreendimentos entregues
-                  </div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-[#BFA86B] mb-2">150k</div>
-                  <div className={`text-sm ${theme === "dark" ? "text-gray-400" : "text-gray-500"}`}>
-                    m² construídos
-                  </div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-[#BFA86B] mb-2">2.5k</div>
-                  <div className={`text-sm ${theme === "dark" ? "text-gray-400" : "text-gray-500"}`}>
-                    Clientes satisfeitos
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="relative">
-              <Image src="/placeholder-3tvfi.png" alt="SOITO Office" width={500} height={600} className="rounded-lg" />
-              <div
-                className={`absolute inset-0 rounded-lg ${
-                  theme === "dark"
-                    ? "bg-gradient-to-t from-black/50 to-transparent"
-                    : "bg-gradient-to-t from-white/50 to-transparent"
-                }`}
-              />
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Stats Section */}
+      <LuxuryStats
+        stats={statsData}
+        title="Números que Falam por Si"
+        subtitle="Nossa trajetória de sucesso é construída com base em resultados sólidos e relacionamentos duradouros."
+        className="bg-gradient-to-br from-black via-gray-900 to-black"
+      />
 
-      {/* Valores e Propósito */}
-      <section className={`py-20 ${theme === "dark" ? "bg-black" : "bg-white"}`}>
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className={`text-4xl md:text-5xl font-bold mb-6 ${theme === "dark" ? "text-white" : "text-black"}`}>
-              Nossos <span className="text-[#BFA86B]">Valores</span>
-            </h2>
-            <p className={`text-xl max-w-3xl mx-auto ${theme === "dark" ? "text-gray-300" : "text-gray-600"}`}>
-              Princípios que norteiam cada decisão e cada projeto que desenvolvemos
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8 mb-16">
-            <Card
-              className={`transition-colors hover:border-[#BFA86B]/40 ${
-                theme === "dark" ? "bg-[#0B0B0B] border-[#BFA86B]/20" : "bg-white border-[#BFA86B]/30 shadow-lg"
-              }`}
-            >
-              <CardContent className="p-8 text-center">
-                <Target className="w-12 h-12 text-[#BFA86B] mx-auto mb-4" />
-                <h3 className={`text-xl font-bold mb-4 ${theme === "dark" ? "text-white" : "text-black"}`}>Missão</h3>
-                <p className={theme === "dark" ? "text-gray-300" : "text-gray-600"}>
-                  Transformar oportunidades imobiliárias em investimentos sólidos e rentáveis, criando valor sustentável
-                  para nossos parceiros e clientes.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card
-              className={`transition-colors hover:border-[#BFA86B]/40 ${
-                theme === "dark" ? "bg-[#0B0B0B] border-[#BFA86B]/20" : "bg-white border-[#BFA86B]/30 shadow-lg"
-              }`}
-            >
-              <CardContent className="p-8 text-center">
-                <Eye className="w-12 h-12 text-[#BFA86B] mx-auto mb-4" />
-                <h3 className={`text-xl font-bold mb-4 ${theme === "dark" ? "text-white" : "text-black"}`}>Visão</h3>
-                <p className={theme === "dark" ? "text-gray-300" : "text-gray-600"}>
-                  Ser reconhecida como a principal referência em investimentos imobiliários estratégicos, sempre
-                  antecipando tendências de mercado.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card
-              className={`transition-colors hover:border-[#BFA86B]/40 ${
-                theme === "dark" ? "bg-[#0B0B0B] border-[#BFA86B]/20" : "bg-white border-[#BFA86B]/30 shadow-lg"
-              }`}
-            >
-              <CardContent className="p-8 text-center">
-                <Heart className="w-12 h-12 text-[#BFA86B] mx-auto mb-4" />
-                <h3 className={`text-xl font-bold mb-4 ${theme === "dark" ? "text-white" : "text-black"}`}>Valores</h3>
-                <p className={theme === "dark" ? "text-gray-300" : "text-gray-600"}>
-                  Transparência, inovação, excelência e compromisso com resultados concretos em cada projeto que
-                  desenvolvemos.
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-
-          <div className="grid md:grid-cols-5 gap-6">
-            {[
-              { icon: CheckCircle, text: "Compromisso com qualidade" },
-              { icon: Building2, text: "Arquitetura inovadora" },
-              { icon: Award, text: "Sustentabilidade" },
-              { icon: Users, text: "Transparência" },
-              { icon: TrendingUp, text: "Foco no cliente" },
-            ].map((item, index) => (
-              <div key={index} className="text-center">
-                <item.icon className="w-8 h-8 text-[#BFA86B] mx-auto mb-3" />
-                <p className={`text-sm ${theme === "dark" ? "text-gray-300" : "text-gray-600"}`}>{item.text}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Nossos Empreendimentos */}
-      <section id="empreendimentos" className={`py-20 ${theme === "dark" ? "bg-[#0B0B0B]" : "bg-gray-50"}`}>
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className={`text-4xl md:text-5xl font-bold mb-6 ${theme === "dark" ? "text-white" : "text-black"}`}>
-              Nossos <span className="text-[#BFA86B]">Empreendimentos</span>
-            </h2>
-            <p className={`text-xl max-w-3xl mx-auto ${theme === "dark" ? "text-gray-300" : "text-gray-600"}`}>
-              Projetos que transformam paisagens urbanas e geram valor sustentável
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
-            {[
-              {
-                name: "Residencial Aurora",
-                status: "Entregue",
-                location: "Vila Madalena, SP",
-                type: "Studios e Lofts",
-                image: "/modern-residential-facade.png",
-              },
-              {
-                name: "Corporate Plaza",
-                status: "Em Obras",
-                location: "Faria Lima, SP",
-                type: "Salas Comerciais",
-                image: "/placeholder-bs4bw.png",
-              },
-              {
-                name: "Urban Living",
-                status: "Lançamento",
-                location: "Pinheiros, SP",
-                type: "Studios Compactos",
-                image: "/modern-apartment-building.png",
-              },
-            ].map((project, index) => (
-              <Card
-                key={index}
-                className={`transition-all duration-300 group overflow-hidden hover:border-[#BFA86B]/40 ${
-                  theme === "dark" ? "bg-black border-[#BFA86B]/20" : "bg-white border-[#BFA86B]/30 shadow-lg"
-                }`}
-              >
-                <div className="relative">
-                  <Image
-                    src={project.image || "/placeholder.svg"}
-                    alt={project.name}
-                    width={400}
-                    height={300}
-                    className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                  <Badge className="absolute top-4 right-4 bg-[#BFA86B] text-black">{project.status}</Badge>
-                </div>
-                <CardContent className="p-6">
-                  <h3 className={`text-xl font-bold mb-2 ${theme === "dark" ? "text-white" : "text-black"}`}>
-                    {project.name}
-                  </h3>
-                  <p className="text-[#BFA86B] mb-2 flex items-center">
-                    <MapPin className="w-4 h-4 mr-1" />
-                    {project.location}
-                  </p>
-                  <p className={`mb-4 ${theme === "dark" ? "text-gray-300" : "text-gray-600"}`}>{project.type}</p>
-                  <Button
-                    variant="outline"
-                    className={`w-full border-[#BFA86B] text-[#BFA86B] hover:bg-[#BFA86B] ${
-                      theme === "dark" ? "hover:text-black" : "hover:text-white"
-                    }`}
-                    asChild
-                  >
-                    <Link
-                      href={
-                        project.name === "Residencial Aurora"
-                          ? "/empreendimento-cliente"
-                          : project.name === "Corporate Plaza"
-                            ? "/empreendimento-investidor"
-                            : "#"
-                      }
-                    >
-                      Ver Detalhes
-                    </Link>
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-
-          <div className="text-center">
-            <Button size="lg" className="bg-[#BFA86B] text-black hover:bg-[#BFA86B]/90">
-              Ver Todos os Empreendimentos
-              <ArrowRight className="w-5 h-5 ml-2" />
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* Área do Investidor */}
-      <section id="investidores" className={`py-20 ${theme === "dark" ? "bg-black" : "bg-white"}`}>
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className={`text-4xl md:text-5xl font-bold mb-6 ${theme === "dark" ? "text-white" : "text-black"}`}>
-                💼 Seja sócio dos nossos <span className="text-[#BFA86B]">projetos</span>
-              </h2>
-              <p className={`text-xl mb-8 leading-relaxed ${theme === "dark" ? "text-gray-300" : "text-gray-600"}`}>
-                Oportunidades exclusivas de investimento com rentabilidade superior e atuação em mercados estratégicos.
-              </p>
-              <div className="space-y-4 mb-8">
-                <div className="flex items-center">
-                  <CheckCircle className="w-6 h-6 text-[#BFA86B] mr-3" />
-                  <span className={theme === "dark" ? "text-gray-300" : "text-gray-600"}>
-                    Rentabilidade superior ao mercado
-                  </span>
-                </div>
-                <div className="flex items-center">
-                  <CheckCircle className="w-6 h-6 text-[#BFA86B] mr-3" />
-                  <span className={theme === "dark" ? "text-gray-300" : "text-gray-600"}>
-                    Localização estratégica dos projetos
-                  </span>
-                </div>
-                <div className="flex items-center">
-                  <CheckCircle className="w-6 h-6 text-[#BFA86B] mr-3" />
-                  <span className={theme === "dark" ? "text-gray-300" : "text-gray-600"}>
-                    Transparência total nos processos
-                  </span>
-                </div>
-                <div className="flex items-center">
-                  <CheckCircle className="w-6 h-6 text-[#BFA86B] mr-3" />
-                  <span className={theme === "dark" ? "text-gray-300" : "text-gray-600"}>
-                    Acompanhamento personalizado
-                  </span>
-                </div>
-              </div>
-              <Button size="lg" className="bg-[#BFA86B] text-black hover:bg-[#BFA86B]/90" asChild>
-                <Link href="/empreendimento-investidor">
-                  Saiba Mais sobre Investir
-                  <TrendingUp className="w-5 h-5 ml-2" />
-                </Link>
-              </Button>
-            </div>
-            <div className="relative">
-              <Image
-                src="/modern-office-meeting.png"
-                alt="Investidores SOITO"
-                width={600}
-                height={500}
-                className="rounded-lg"
-              />
-              <div
-                className={`absolute inset-0 rounded-lg ${
-                  theme === "dark"
-                    ? "bg-gradient-to-t from-black/50 to-transparent"
-                    : "bg-gradient-to-t from-white/50 to-transparent"
-                }`}
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Diferenciais */}
-      <section className={`py-20 ${theme === "dark" ? "bg-[#0B0B0B]" : "bg-gray-50"}`}>
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className={`text-4xl md:text-5xl font-bold mb-6 ${theme === "dark" ? "text-white" : "text-black"}`}>
-              Nossos <span className="text-[#BFA86B]">Diferenciais</span>
-            </h2>
-          </div>
-
-          <div className="grid md:grid-cols-4 gap-8">
-            {[
-              { number: "15+", label: "Anos de mercado", icon: Award },
-              { number: "25", label: "Empreendimentos entregues", icon: Building2 },
-              { number: "150k", label: "m² construídos", icon: TrendingUp },
-              { number: "2.5k", label: "Clientes atendidos", icon: Users },
-            ].map((item, index) => (
-              <div key={index} className="text-center">
-                <item.icon className="w-12 h-12 text-[#BFA86B] mx-auto mb-4" />
-                <div className="text-4xl font-bold text-[#BFA86B] mb-2">{item.number}</div>
-                <div className={theme === "dark" ? "text-gray-300" : "text-gray-600"}>{item.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Depoimentos */}
-      <section className={`py-20 ${theme === "dark" ? "bg-black" : "bg-white"}`}>
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className={`text-4xl md:text-5xl font-bold mb-6 ${theme === "dark" ? "text-white" : "text-black"}`}>
-              O que dizem nossos <span className="text-[#BFA86B]">clientes</span>
-            </h2>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                text: "Empresa séria, entregou antes do prazo. Superou todas as expectativas.",
-                author: "Maria Silva",
-                role: "Investidora",
-              },
-              {
-                text: "Me surpreendi com a qualidade do imóvel e o atendimento personalizado.",
-                author: "João Santos",
-                role: "Cliente",
-              },
-              {
-                text: "Rentabilidade exatamente como projetado. Parceria de longo prazo garantida.",
-                author: "Carlos Oliveira",
-                role: "Investidor",
-              },
-            ].map((testimonial, index) => (
-              <Card
-                key={index}
-                className={`${theme === "dark" ? "bg-[#0B0B0B] border-[#BFA86B]/20" : "bg-white border-[#BFA86B]/30 shadow-lg"}`}
-              >
-                <CardContent className="p-8">
-                  <p className={`mb-6 italic ${theme === "dark" ? "text-gray-300" : "text-gray-600"}`}>
-                    "{testimonial.text}"
-                  </p>
-                  <div className="flex items-center">
-                    <div className="w-12 h-12 bg-[#BFA86B] rounded-full flex items-center justify-center text-black font-bold mr-4">
-                      {testimonial.author.charAt(0)}
-                    </div>
-                    <div>
-                      <div className={`font-bold ${theme === "dark" ? "text-white" : "text-black"}`}>
-                        {testimonial.author}
-                      </div>
-                      <div className={`text-sm ${theme === "dark" ? "text-gray-400" : "text-gray-500"}`}>
-                        {testimonial.role}
-                      </div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Blog/Notícias */}
-      <section id="blog" className={`py-20 ${theme === "dark" ? "bg-[#0B0B0B]" : "bg-gray-50"}`}>
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className={`text-4xl md:text-5xl font-bold mb-6 ${theme === "dark" ? "text-white" : "text-black"}`}>
-              Últimas do <span className="text-[#BFA86B]">Blog</span>
-            </h2>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
-            {[
-              {
-                title: "Como escolher seu imóvel ideal",
-                excerpt: "Dicas essenciais para fazer a melhor escolha na hora de investir em imóveis.",
-                image: "/modern-apartment.png",
-              },
-              {
-                title: "5 motivos para investir em imóveis",
-                excerpt: "Descubra por que o mercado imobiliário continua sendo uma das melhores opções.",
-                image: "/real-estate-investment-chart.png",
-              },
-              {
-                title: "Sustentabilidade na construção civil",
-                excerpt: "Como a SOITO incorpora práticas sustentáveis em seus empreendimentos.",
-                image: "/sustainable-building.png",
-              },
-            ].map((post, index) => (
-              <Card
-                key={index}
-                className={`transition-all duration-300 group overflow-hidden hover:border-[#BFA86B]/40 ${
-                  theme === "dark" ? "bg-black border-[#BFA86B]/20" : "bg-white border-[#BFA86B]/30 shadow-lg"
-                }`}
-              >
-                <Image
-                  src={post.image || "/placeholder.svg"}
-                  alt={post.title}
-                  width={300}
-                  height={200}
-                  className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-                <CardContent className="p-6">
-                  <h3
-                    className={`text-xl font-bold mb-3 group-hover:text-[#BFA86B] transition-colors ${
-                      theme === "dark" ? "text-white" : "text-black"
-                    }`}
-                  >
-                    {post.title}
-                  </h3>
-                  <p className={`mb-4 ${theme === "dark" ? "text-gray-300" : "text-gray-600"}`}>{post.excerpt}</p>
-                  <Button
-                    variant="ghost"
-                    className={`text-[#BFA86B] hover:bg-[#BFA86B] p-0 ${
-                      theme === "dark" ? "hover:text-black" : "hover:text-white"
-                    }`}
-                  >
-                    Ler mais <ArrowRight className="w-4 h-4 ml-1" />
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-
-          <div className="text-center">
-            <Button
-              size="lg"
-              variant="outline"
-              className={`border-[#BFA86B] text-[#BFA86B] hover:bg-[#BFA86B] ${
-                theme === "dark" ? "hover:text-black" : "hover:text-white"
-              }`}
-            >
-              Ver todas as notícias
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* Chamada Final */}
-      <section className={`py-20 ${theme === "dark" ? "bg-black" : "bg-white"}`}>
-        <div className="container mx-auto px-4 text-center">
-          <h2 className={`text-4xl md:text-5xl font-bold mb-6 ${theme === "dark" ? "text-white" : "text-black"}`}>
-            Vamos construir <span className="text-[#BFA86B]">juntos?</span>
-          </h2>
-          <p className={`text-xl mb-8 max-w-2xl mx-auto ${theme === "dark" ? "text-gray-300" : "text-gray-600"}`}>
-            Entre em contato conosco e descubra como podemos transformar suas ideias em investimentos concretos.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-[#BFA86B] text-black hover:bg-[#BFA86B]/90 text-lg px-8 py-4" asChild>
-              <Link href="#contato">
-                <MessageCircle className="w-5 h-5 mr-2" />
-                Fale Conosco
-              </Link>
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className={`border-[#BFA86B] text-[#BFA86B] hover:bg-[#BFA86B] text-lg px-8 py-4 ${
-                theme === "dark" ? "hover:text-black" : "hover:text-white"
-              }`}
-              asChild
-            >
-              <Link href="/empreendimento-investidor">
-                <TrendingUp className="w-5 h-5 mr-2" />
-                Seja um Investidor
-              </Link>
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer
-        id="contato"
-        className={`border-t py-16 ${
-          theme === "dark" ? "bg-[#0B0B0B] border-[#BFA86B]/20" : "bg-gray-50 border-[#BFA86B]/30"
-        }`}
+      {/* About Section */}
+      <LuxurySection
+        title="Excelência em Cada Detalhe"
+        subtitle="Na SOITO INC, cada projeto é uma obra-prima cuidadosamente planejada para superar expectativas e criar valor duradouro."
+        variant="gradient"
       >
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-4 gap-8 mb-12">
-            <div>
-              <Image
-                src={theme === "dark" ? "/images/logo-white.png" : "/images/logo-black.png"}
-                alt="SOITO INC"
-                width={120}
-                height={40}
-                className="h-8 w-auto mb-4"
-              />
-              <p className={`mb-4 ${theme === "dark" ? "text-gray-300" : "text-gray-600"}`}>Investimentos Concretos</p>
-              <div className="flex space-x-4">
-                <Link
-                  href="#"
-                  className={`transition-colors ${
-                    theme === "dark" ? "text-gray-400 hover:text-[#BFA86B]" : "text-gray-500 hover:text-[#BFA86B]"
-                  }`}
-                >
-                  <Instagram className="w-5 h-5" />
-                </Link>
-                <Link
-                  href="#"
-                  className={`transition-colors ${
-                    theme === "dark" ? "text-gray-400 hover:text-[#BFA86B]" : "text-gray-500 hover:text-[#BFA86B]"
-                  }`}
-                >
-                  <Linkedin className="w-5 h-5" />
-                </Link>
-                <Link
-                  href="#"
-                  className={`transition-colors ${
-                    theme === "dark" ? "text-gray-400 hover:text-[#BFA86B]" : "text-gray-500 hover:text-[#BFA86B]"
-                  }`}
-                >
-                  <Facebook className="w-5 h-5" />
-                </Link>
-              </div>
-            </div>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <LuxuryCard
+            title="Para Clientes"
+            description="Encontre o imóvel dos seus sonhos com nossa curadoria especializada de empreendimentos premium."
+            icon={<Users className="w-8 h-8" />}
+            action={{
+              label: "Explorar Imóveis",
+              onClick: () => console.log("Cliente clicked"),
+            }}
+            variant="featured"
+          />
 
-            <div>
-              <h4 className={`font-bold mb-4 ${theme === "dark" ? "text-white" : "text-black"}`}>Links</h4>
-              <div className="space-y-2">
-                <Link
-                  href="#sobre"
-                  className={`block transition-colors ${
-                    theme === "dark" ? "text-gray-300 hover:text-[#BFA86B]" : "text-gray-600 hover:text-[#BFA86B]"
-                  }`}
-                >
-                  Sobre
-                </Link>
-                <Link
-                  href="#empreendimentos"
-                  className={`block transition-colors ${
-                    theme === "dark" ? "text-gray-300 hover:text-[#BFA86B]" : "text-gray-600 hover:text-[#BFA86B]"
-                  }`}
-                >
-                  Empreendimentos
-                </Link>
-                <Link
-                  href="#blog"
-                  className={`block transition-colors ${
-                    theme === "dark" ? "text-gray-300 hover:text-[#BFA86B]" : "text-gray-600 hover:text-[#BFA86B]"
-                  }`}
-                >
-                  Blog
-                </Link>
-                <Link
-                  href="#contato"
-                  className={`block transition-colors ${
-                    theme === "dark" ? "text-gray-300 hover:text-[#BFA86B]" : "text-gray-600 hover:text-[#BFA86B]"
-                  }`}
-                >
-                  Contato
-                </Link>
-              </div>
-            </div>
+          <LuxuryCard
+            title="Para Investidores"
+            description="Oportunidades exclusivas de investimento com alto potencial de retorno e segurança garantida."
+            icon={<TrendingUp className="w-8 h-8" />}
+            action={{
+              label: "Ver Oportunidades",
+              onClick: () => console.log("Investidor clicked"),
+            }}
+            variant="featured"
+          />
 
-            <div>
-              <h4 className={`font-bold mb-4 ${theme === "dark" ? "text-white" : "text-black"}`}>Contato</h4>
-              <div className="space-y-2">
-                <div className={`flex items-center ${theme === "dark" ? "text-gray-300" : "text-gray-600"}`}>
-                  <Phone className="w-4 h-4 mr-2 text-[#BFA86B]" />
-                  (11) 3456-7890
-                </div>
-                <div className={`flex items-center ${theme === "dark" ? "text-gray-300" : "text-gray-600"}`}>
-                  <MessageCircle className="w-4 h-4 mr-2 text-[#BFA86B]" />
-                  (11) 99999-9999
-                </div>
-                <div className={`flex items-center ${theme === "dark" ? "text-gray-300" : "text-gray-600"}`}>
-                  <Mail className="w-4 h-4 mr-2 text-[#BFA86B]" />
-                  contato@soitoinc.com.br
-                </div>
-              </div>
-            </div>
+          <LuxuryCard
+            title="Consultoria Especializada"
+            description="Assessoria completa desde a escolha do investimento até a entrega das chaves."
+            icon={<Award className="w-8 h-8" />}
+            action={{
+              label: "Falar com Especialista",
+              onClick: () => console.log("Consultoria clicked"),
+            }}
+            variant="featured"
+          />
+        </div>
+      </LuxurySection>
 
-            <div>
-              <h4 className={`font-bold mb-4 ${theme === "dark" ? "text-white" : "text-black"}`}>Endereço</h4>
-              <div className={`flex items-start ${theme === "dark" ? "text-gray-300" : "text-gray-600"}`}>
-                <MapPin className="w-4 h-4 mr-2 text-[#BFA86B] mt-1" />
-                <div>
-                  Av. Faria Lima, 1234
-                  <br />
-                  Pinheiros, São Paulo - SP
-                  <br />
-                  CEP: 01452-000
-                </div>
-              </div>
-            </div>
+      {/* Projects Section */}
+      <LuxuryProjectsSection />
+
+      {/* Partners Section - Nova seção de parceiros */}
+      <LuxuryPartnersSection />
+
+      {/* Gallery Section */}
+      <LuxurySection
+        title="Nossos Projetos"
+        subtitle="Conheça alguns dos empreendimentos que definem o padrão de excelência no mercado imobiliário."
+        variant="gradient"
+      >
+        <LuxuryGallery images={galleryImages} />
+      </LuxurySection>
+
+      {/* Services Section */}
+      <LuxurySection
+        title="Nossos Serviços"
+        subtitle="Soluções completas para todas as suas necessidades imobiliárias."
+        variant="dark"
+      >
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <LuxuryCard
+            title="Desenvolvimento"
+            description="Criação de empreendimentos únicos e inovadores."
+            icon={<Building2 className="w-6 h-6" />}
+            variant="minimal"
+          />
+
+          <LuxuryCard
+            title="Investimentos"
+            description="Oportunidades selecionadas com alto potencial."
+            icon={<TrendingUp className="w-6 h-6" />}
+            variant="minimal"
+          />
+
+          <LuxuryCard
+            title="Consultoria"
+            description="Assessoria especializada em todo o processo."
+            icon={<Users className="w-6 h-6" />}
+            variant="minimal"
+          />
+
+          <LuxuryCard
+            title="Pós-Venda"
+            description="Suporte completo após a aquisição."
+            icon={<Award className="w-6 h-6" />}
+            variant="minimal"
+          />
+        </div>
+      </LuxurySection>
+
+      {/* Contact Section */}
+      <LuxurySection
+        title="Entre em Contato"
+        subtitle="Estamos prontos para transformar seus objetivos imobiliários em realidade."
+        variant="gradient"
+      >
+        <div className="grid lg:grid-cols-2 gap-12 items-start">
+          <div className="space-y-8">
+            <LuxuryForm
+              title="Fale Conosco"
+              subtitle="Preencha o formulário e nossa equipe entrará em contato em até 24 horas."
+              fields={contactFields}
+              submitLabel="Enviar Mensagem"
+              submitIcon={<Mail className="w-5 h-5 mr-2" />}
+              onSubmit={handleContactSubmit}
+            />
           </div>
 
-          <div
-            className={`border-t pt-8 text-center ${theme === "dark" ? "border-[#BFA86B]/20" : "border-[#BFA86B]/30"}`}
-          >
-            <p className={theme === "dark" ? "text-gray-400" : "text-gray-500"}>
-              © 2024 SOITO INC. Todos os direitos reservados. | CNPJ: 12.345.678/0001-90
-            </p>
+          <div className="space-y-8">
+            <div className="luxury-glass rounded-2xl p-8">
+              <h3 className="text-2xl font-light text-white mb-6 tracking-wide">Informações de Contato</h3>
+
+              <div className="space-y-6">
+                <div className="flex items-start space-x-4">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#BFA86B]/20 to-[#BFA86B]/10 flex items-center justify-center text-[#BFA86B] flex-shrink-0">
+                    <Phone className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <p className="text-gray-300 font-light">Telefone</p>
+                    <p className="text-white text-lg">(11) 3000-0000</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start space-x-4">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#BFA86B]/20 to-[#BFA86B]/10 flex items-center justify-center text-[#BFA86B] flex-shrink-0">
+                    <Mail className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <p className="text-gray-300 font-light">E-mail</p>
+                    <p className="text-white text-lg">contato@soitoinc.com</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start space-x-4">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#BFA86B]/20 to-[#BFA86B]/10 flex items-center justify-center text-[#BFA86B] flex-shrink-0">
+                    <MapPin className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <p className="text-gray-300 font-light">Endereço</p>
+                    <p className="text-white text-lg">
+                      Av. Paulista, 1000
+                      <br />
+                      São Paulo - SP
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="luxury-glass rounded-2xl p-8">
+              <h3 className="text-2xl font-light text-white mb-6 tracking-wide">Horário de Atendimento</h3>
+
+              <div className="space-y-3">
+                <div className="flex justify-between">
+                  <span className="text-gray-300">Segunda - Sexta</span>
+                  <span className="text-white">8h às 18h</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-gray-300">Sábado</span>
+                  <span className="text-white">9h às 14h</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-gray-300">Domingo</span>
+                  <span className="text-white">Fechado</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </footer>
-    </div>
+      </LuxurySection>
+    </main>
   )
 }
