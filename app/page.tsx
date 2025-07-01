@@ -1,7 +1,7 @@
 "use client"
 
 import { NavigationMenu } from "@/components/navigation-menu"
-import { LuxuryHero } from "@/components/luxury/luxury-hero"
+import { HeroSlider } from "@/components/hero-slider"
 import { LuxurySection } from "@/components/luxury/luxury-section"
 import { LuxuryCard } from "@/components/luxury/luxury-card"
 import { LuxuryStats } from "@/components/luxury/luxury-stats"
@@ -111,28 +111,14 @@ export default function HomePage() {
       {/* Navigation Menu */}
       <NavigationMenu />
 
-      {/* Hero Section - SOITO INC */}
-      <LuxuryHero
-        badge="Excelência em Empreendimentos Imobiliários"
-        title={
-          <span className="luxury-text-gradient">
-            SOITO
-            <br />
-            <span className="text-white">INC</span>
-          </span>
-        }
-        subtitle="Transformamos sonhos em realidade através de empreendimentos imobiliários de alto padrão. Conheça nossa oportunidade exclusiva: Panorama Taubaté - 19,1% de rentabilidade anual."
-        backgroundImage=""
-        primaryAction={{
-          label: "Conhecer Panorama",
-          onClick: () => window.location.href = "/invista-panorama",
-          icon: <ArrowRight className="w-5 h-5 mr-2" />,
-        }}
-        secondaryAction={{
-          label: "Simular Investimento",
-          onClick: () => window.location.href = "/invista-panorama",
-          icon: <Play className="w-5 h-5 mr-2" />,
-        }}
+      {/* Hero Slider - SOITO INC */}
+      <HeroSlider 
+        autoplay={true}
+        autoplayDelay={5000}
+        showIndicators={true}
+        showNavigation={true}
+        showAutoplayControl={true}
+        onSlideChange={(index) => console.log('Slide changed to:', index)}
       />
 
       {/* Stats Section - SOITO INC */}
