@@ -13,10 +13,8 @@ export function NavigationMenu() {
   const { theme } = useTheme()
 
   const getWhatsAppMessage = () => {
-    if (pathname === "/empreendimento-cliente") {
-      return "Olá! Tenho interesse no Residencial Aurora"
-    } else if (pathname === "/empreendimento-investidor") {
-      return "Olá! Tenho interesse em investir no Corporate Plaza"
+    if (pathname === "/invista-panorama") {
+      return "Olá! Tenho interesse no Panorama Taubaté"
     }
     return "Olá! Gostaria de mais informações sobre a SOITO INC"
   }
@@ -60,20 +58,24 @@ export function NavigationMenu() {
               Início
             </Link>
             <Link
-              href="/#empreendimentos"
+              href="/#sobre"
               className={`transition-colors ${
                 theme === "dark" ? "text-white hover:text-[#BFA86B]" : "text-black hover:text-[#BFA86B]"
               }`}
             >
-              Empreendimentos
+              Sobre
             </Link>
             <Link
-              href="/#investidores"
+              href="/invista-panorama"
               className={`transition-colors ${
-                theme === "dark" ? "text-white hover:text-[#BFA86B]" : "text-black hover:text-[#BFA86B]"
+                pathname === "/invista-panorama"
+                  ? "text-[#BFA86B]"
+                  : theme === "dark"
+                    ? "text-white hover:text-[#BFA86B]"
+                    : "text-black hover:text-[#BFA86B]"
               }`}
             >
-              Investidores
+              Panorama Taubaté
             </Link>
             <Link
               href="/#contato"

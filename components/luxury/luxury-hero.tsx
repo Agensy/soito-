@@ -32,16 +32,9 @@ export function LuxuryHero({
 }: LuxuryHeroProps) {
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image */}
+      {/* Background sem imagem - apenas gradiente */}
       <div className="absolute inset-0">
-        <Image
-          src={backgroundImage || "/placeholder.svg"}
-          alt="Hero Background"
-          fill
-          className="object-cover"
-          priority
-        />
-        <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-black/60 to-black/80" />
+        <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black" />
       </div>
 
       {/* Content */}
