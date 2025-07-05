@@ -2,6 +2,7 @@ import { Header } from '../components/layout/Header'
 import { HeroSlider } from '../components/sections/HeroSlider'
 import { CEOSection } from '../components/sections/CEOSection'
 import { Building2, Home, Phone, Mail, MapPin } from 'lucide-react'
+import { Footer } from '../components/layout/Footer'
 
 export default function HomePage() {
   return (
@@ -130,54 +131,7 @@ export default function HomePage() {
       </section>
 
       {/* Footer */}
-      <footer className="py-12 px-4 sm:px-6 lg:px-8 bg-background-tertiary border-t border-border-primary">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div>
-              <div className="text-2xl font-serif font-bold mb-4">
-                <span className="text-gradient">SOITO</span>
-                <span className="text-text-secondary"> INC</span>
-              </div>
-              <p className="text-text-secondary">
-                Transformando visões em realidade imobiliária há 25 anos.
-              </p>
-            </div>
-            
-            <div>
-              <h3 className="font-bold text-text-primary mb-4">Empresa</h3>
-              <ul className="space-y-2 text-text-secondary">
-                <li><a href="#" className="hover:text-primary-500 transition-smooth">Sobre Nós</a></li>
-                <li><a href="#" className="hover:text-primary-500 transition-smooth">Nossa História</a></li>
-                <li><a href="#" className="hover:text-primary-500 transition-smooth">Equipe</a></li>
-                <li><a href="#" className="hover:text-primary-500 transition-smooth">Carreiras</a></li>
-              </ul>
-            </div>
-            
-            <div>
-              <h3 className="font-bold text-text-primary mb-4">Projetos</h3>
-              <ul className="space-y-2 text-text-secondary">
-                <li><a href="#" className="hover:text-primary-500 transition-smooth">Residencial</a></li>
-                <li><a href="#" className="hover:text-primary-500 transition-smooth">Comercial</a></li>
-                <li><a href="#" className="hover:text-primary-500 transition-smooth">Corporativo</a></li>
-                <li><a href="#" className="hover:text-primary-500 transition-smooth">Luxo</a></li>
-              </ul>
-            </div>
-            
-            <div>
-              <h3 className="font-bold text-text-primary mb-4">Contato</h3>
-              <ul className="space-y-2 text-text-secondary">
-                <li>contato@soito.com.br</li>
-                <li>(11) 99999-9999</li>
-                <li>São Paulo, SP</li>
-              </ul>
-            </div>
-          </div>
-          
-          <div className="border-t border-border-primary mt-8 pt-8 text-center text-text-secondary">
-            <p>&copy; 2024 SOITO INC. Todos os direitos reservados.</p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </main>
   )
 }
