@@ -48,4 +48,4 @@ export function StepConfirmation() {
       </div>
     </motion.div>
   )
-} 
+}

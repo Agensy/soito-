@@ -1,18 +1,17 @@
 "use client"
 
-import { useState } from 'react'
-import { motion } from 'framer-motion'
-import { Menu, X } from 'lucide-react'
-import { Button } from '@/components/ui/button'
-import { ThemeToggle } from '../theme/ThemeToggle'
-import { cn } from '../../lib/utils'
+import { useState } from "react"
+import { motion } from "framer-motion"
+import { Menu, X } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import { ThemeToggle } from "../theme/ThemeToggle"
 
 const navigation = [
-  { name: 'Início', href: '#home' },
-  { name: 'Sobre', href: '#about' },
-  { name: 'Projetos', href: '#projects' },
-  { name: 'Investimentos', href: '#investments' },
-  { name: 'Contato', href: '#contact' },
+  { name: "Início", href: "#home" },
+  { name: "Sobre", href: "#about" },
+  { name: "Projetos", href: "#projects" },
+  { name: "Investimentos", href: "#investments" },
+  { name: "Contato", href: "#contact" },
 ]
 
 export function Header() {
@@ -29,10 +28,7 @@ export function Header() {
             transition={{ duration: 0.6 }}
             className="flex items-center"
           >
-            <div className="text-2xl sm:text-3xl font-serif font-bold">
-              <span className="text-gradient">SOITO</span>
-              <span className="text-text-secondary"> INC</span>
-            </div>
+            <img src="/logo-soito.svg" alt="SOITO INC Logo" className="h-8 sm:h-10 w-auto dark:invert" />
           </motion.div>
 
           {/* Desktop Navigation */}
@@ -69,11 +65,7 @@ export function Header() {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="hidden sm:block"
             >
-              <Button
-                variant="primary"
-                size="sm"
-                className="hover:shadow-golden"
-              >
+              <Button variant="primary" size="sm" className="hover:shadow-golden">
                 Fale Conosco
               </Button>
             </motion.div>
@@ -100,7 +92,7 @@ export function Header() {
           initial={{ opacity: 0, height: 0 }}
           animate={{
             opacity: isMenuOpen ? 1 : 0,
-            height: isMenuOpen ? 'auto' : 0,
+            height: isMenuOpen ? "auto" : 0,
           }}
           transition={{ duration: 0.3 }}
           className="md:hidden overflow-hidden"
@@ -117,11 +109,7 @@ export function Header() {
               </a>
             ))}
             <div className="px-4 pt-2">
-              <Button
-                variant="primary"
-                size="sm"
-                className="w-full hover:shadow-golden"
-              >
+              <Button variant="primary" size="sm" className="w-full hover:shadow-golden">
                 Fale Conosco
               </Button>
             </div>
@@ -130,4 +118,4 @@ export function Header() {
       </div>
     </header>
   )
-} 
+}

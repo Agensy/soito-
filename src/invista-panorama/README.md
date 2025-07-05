@@ -27,15 +27,15 @@ Página de investimento com 3 fases para captação de leads e simulação de re
 
 Adicione a URL do webhook n8n no arquivo `.env.local`:
 
-```bash
+\`\`\`bash
 NEXT_PUBLIC_N8N_WEBHOOK_URL=https://hooks.n8n.cloud/webhook/SEU_WEBHOOK_ID
-```
+\`\`\`
 
 ### 2. Estrutura do Payload
 
 O webhook enviará os seguintes dados:
 
-```json
+\`\`\`json
 {
   // Dados pessoais
   "nome": "string",
@@ -60,7 +60,7 @@ O webhook enviará os seguintes dados:
   "fonte": "Landing Page /invista-panorama",
   "userAgent": "string"
 }
-```
+\`\`\`
 
 ### 3. Configurações do Webhook
 
@@ -116,14 +116,14 @@ O sistema captura:
 
 ## 🛠️ Desenvolvimento
 
-```bash
+\`\`\`bash
 # Executar em desenvolvimento
 npm run dev
 
 # Acessar a página
 http://localhost:3000/invista-panorama
-```
+\`\`\`
 
 ## 📞 Suporte
 
-Para configuração do webhook n8n ou customizações, entre em contato com a equipe de desenvolvimento. 
+Para configuração do webhook n8n ou customizações, entre em contato com a equipe de desenvolvimento.

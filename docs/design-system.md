@@ -28,7 +28,7 @@ Este documento descreve o **padrão oficial de botões** utilizado no site SOITO
 
 ## Exemplo de implementação
 
-```tsx
+\`\`\`tsx
 <div className="flex gap-4">
   <Button variant="primary" size="lg" className="min-w-[200px]">
     Agendar Consultoria
@@ -38,8 +38,8 @@ Este documento descreve o **padrão oficial de botões** utilizado no site SOITO
     Solicitar Proposta
   </Button>
 </div>
-```
+\`\`\`
 
 ## Manutenção
 
-Qualquer ajuste de cor ou comportamento **deve** ser feito em um único lugar: `src/components/ui/button.tsx`. Assim, toda a aplicação refletirá a mudança automaticamente. 
+Qualquer ajuste de cor ou comportamento **deve** ser feito em um único lugar: `src/components/ui/button.tsx`. Assim, toda a aplicação refletirá a mudança automaticamente.

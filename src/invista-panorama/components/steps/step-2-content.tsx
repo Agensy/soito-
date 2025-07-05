@@ -562,4 +562,4 @@ export function Step2Content() {
       </motion.div>
     </div>
   )
-} 
+}

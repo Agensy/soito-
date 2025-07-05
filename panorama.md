@@ -183,7 +183,7 @@ Preencha seus dados e um consultor entrará em contato com você:
 
 ## 📁 Estrutura de Arquivos Necessários
 
-```
+\`\`\`
 /imagens
     /hero.jpg
     /logo.png
@@ -197,7 +197,7 @@ Preencha seus dados e um consultor entrará em contato com você:
     /brinquedoteca.jpg
     /quadra.jpg
     /og.jpg
-```
+\`\`\`
 
 ---
 
@@ -219,4 +219,3 @@ Preencha seus dados e um consultor entrará em contato com você:
 | Panorama Taubaté | Breve Lançamento | Taubaté - Imaculada Conceição - SP | 2 Dorms    | 56,61 a 60,36 m² | Março/2028 |
 
 ---
-

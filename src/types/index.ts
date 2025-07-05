@@ -62,4 +62,4 @@ export interface SlideData {
       label: string;
     }>;
   };
-} 
+}

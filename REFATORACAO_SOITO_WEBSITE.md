@@ -32,7 +32,7 @@ Este documento detalha a arquitetura e implementação para criar um novo site d
 ## 🏛️ ARQUITETURA PROPOSTA
 
 ### **Stack Tecnológica:**
-```
+\`\`\`
 Frontend: Next.js 14 + TypeScript + Tailwind CSS
 UI: Shadcn/ui + Framer Motion + Lucide Icons
 Estado: Zustand + React Query
@@ -41,10 +41,10 @@ SEO: Next SEO + Structured Data
 Analytics: Google Analytics 4 + Hotjar
 Deploy: Vercel + CloudFlare
 CMS: Sanity.io (opcional)
-```
+\`\`\`
 
 ### **Estrutura de Diretórios:**
-```
+\`\`\`
 soito-website/
 ├── src/
 │   ├── app/                    # App Router (Next.js 14)
@@ -72,14 +72,14 @@ soito-website/
 │   └── documents/
 ├── docs/                       # Documentação
 └── tests/                      # Testes automatizados
-```
+\`\`\`
 
 ---
 
 ## 🎨 DESIGN SYSTEM
 
 ### **Tokens de Design:**
-```typescript
+\`\`\`typescript
 // colors.ts
 export const colors = {
   primary: {
@@ -113,10 +113,10 @@ export const typography = {
     '4xl': '2.25rem'
   }
 }
-```
+\`\`\`
 
 ### **Componentes Base:**
-```typescript
+\`\`\`typescript
 // Button.tsx
 interface ButtonProps {
   variant: 'primary' | 'secondary' | 'outline' | 'ghost'
@@ -133,14 +133,14 @@ interface CardProps {
   padding: 'sm' | 'md' | 'lg'
   children: React.ReactNode
 }
-```
+\`\`\`
 
 ---
 
 ## 📱 PÁGINAS E FUNCIONALIDADES
 
 ### **1. HOME PAGE**
-```typescript
+\`\`\`typescript
 // app/page.tsx
 export default function HomePage() {
   return (
@@ -155,7 +155,7 @@ export default function HomePage() {
     </>
   )
 }
-```
+\`\`\`
 
 **Seções:**
 - **Hero:** Vídeo background + CTA principal
@@ -167,51 +167,51 @@ export default function HomePage() {
 - **CTA:** Call-to-action para contato
 
 ### **2. SOBRE NÓS**
-```typescript
+\`\`\`typescript
 // app/sobre/page.tsx
 - História da empresa
 - Missão, visão, valores
 - Equipe (CEO + colaboradores)
 - Conquistas e certificações
 - Timeline da empresa
-```
+\`\`\`
 
 ### **3. PROJETOS**
-```typescript
+\`\`\`typescript
 // app/projetos/page.tsx
 - Grid de projetos
 - Filtros (status, tipo, localização)
 - Detalhes de cada projeto
 - Calculadora de ROI
 - Galeria de imagens
-```
+\`\`\`
 
 ### **4. INVESTIR**
-```typescript
+\`\`\`typescript
 // app/investir/page.tsx
 - Simulador de investimento
 - Tipos de investimento (SCP, etc.)
 - Processo passo-a-passo
 - FAQ sobre investimentos
 - Formulário de interesse
-```
+\`\`\`
 
 ### **5. CONTATO**
-```typescript
+\`\`\`typescript
 // app/contato/page.tsx
 - Formulário de contato
 - Informações da empresa
 - Mapa interativo
 - WhatsApp integration
 - Agendamento de reunião
-```
+\`\`\`
 
 ---
 
 ## 🔧 IMPLEMENTAÇÃO TÉCNICA
 
 ### **1. Performance Optimization**
-```typescript
+\`\`\`typescript
 // next.config.js
 module.exports = {
   images: {
@@ -248,10 +248,10 @@ export function OptimizedImage({ src, alt, className, priority }: OptimizedImage
     />
   )
 }
-```
+\`\`\`
 
 ### **2. SEO Implementation**
-```typescript
+\`\`\`typescript
 // app/layout.tsx
 import { Metadata } from 'next'
 
@@ -287,10 +287,10 @@ export function generateStructuredData() {
     }
   }
 }
-```
+\`\`\`
 
 ### **3. State Management**
-```typescript
+\`\`\`typescript
 // stores/investmentStore.ts
 import { create } from 'zustand'
 
@@ -314,10 +314,10 @@ export const useInvestmentStore = create<InvestmentState>((set, get) => ({
     return projectType === 'scp' ? amount * 1.191 : amount * 1.15
   }
 }))
-```
+\`\`\`
 
 ### **4. Form Handling**
-```typescript
+\`\`\`typescript
 // components/forms/ContactForm.tsx
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
@@ -348,14 +348,14 @@ export function ContactForm() {
     </form>
   )
 }
-```
+\`\`\`
 
 ---
 
 ## 📊 ANALYTICS E TRACKING
 
 ### **1. Google Analytics 4**
-```typescript
+\`\`\`typescript
 // lib/analytics.ts
 import { gtag } from 'ga-gtag'
 
@@ -373,10 +373,10 @@ export const trackEvent = (action: string, category: string, label?: string) => 
 // - Download de materiais
 // - Submissão de formulários
 // - Visualização de projetos
-```
+\`\`\`
 
 ### **2. Hotjar Integration**
-```typescript
+\`\`\`typescript
 // components/HotjarScript.tsx
 export function HotjarScript() {
   return (
@@ -392,14 +392,14 @@ export function HotjarScript() {
     />
   )
 }
-```
+\`\`\`
 
 ---
 
 ## 🧪 TESTES
 
 ### **1. Estrutura de Testes**
-```typescript
+\`\`\`typescript
 // tests/components/Button.test.tsx
 import { render, screen } from '@testing-library/react'
 import { Button } from '@/components/ui/Button'
@@ -425,10 +425,10 @@ describe('Home Page', () => {
     expect(screen.getByText('Fabio Soito')).toBeInTheDocument()
   })
 })
-```
+\`\`\`
 
 ### **2. E2E Tests (Playwright)**
-```typescript
+\`\`\`typescript
 // tests/e2e/investment-flow.spec.ts
 import { test, expect } from '@playwright/test'
 
@@ -439,14 +439,14 @@ test('complete investment flow', async ({ page }) => {
   await page.click('text=Calcular ROI')
   await expect(page.locator('.roi-result')).toContainText('19.1%')
 })
-```
+\`\`\`
 
 ---
 
 ## 🚀 DEPLOYMENT E CI/CD
 
 ### **1. Vercel Configuration**
-```json
+\`\`\`json
 // vercel.json
 {
   "buildCommand": "npm run build",
@@ -472,10 +472,10 @@ test('complete investment flow', async ({ page }) => {
     }
   ]
 }
-```
+\`\`\`
 
 ### **2. GitHub Actions**
-```yaml
+\`\`\`yaml
 # .github/workflows/ci.yml
 name: CI/CD Pipeline
 
@@ -506,7 +506,7 @@ jobs:
       - uses: vercel/action@v25
         with:
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
-```
+\`\`\`
 
 ---
 
@@ -547,7 +547,7 @@ jobs:
 ## 🔒 SEGURANÇA
 
 ### **1. Headers de Segurança**
-```typescript
+\`\`\`typescript
 // next.config.js
 const securityHeaders = [
   { key: 'X-Frame-Options', value: 'DENY' },
@@ -555,10 +555,10 @@ const securityHeaders = [
   { key: 'Referrer-Policy', value: 'origin-when-cross-origin' },
   { key: 'Permissions-Policy', value: 'camera=(), microphone=(), geolocation=()' }
 ]
-```
+\`\`\`
 
 ### **2. Validação de Forms**
-```typescript
+\`\`\`typescript
 // lib/validators.ts
 export const contactFormSchema = z.object({
   name: z.string().min(2).max(50),
@@ -566,7 +566,7 @@ export const contactFormSchema = z.object({
   phone: z.string().regex(/^\+?[1-9]\d{1,14}$/),
   message: z.string().min(10).max(500)
 })
-```
+\`\`\`
 
 ---
 
@@ -595,4 +595,4 @@ export const contactFormSchema = z.object({
 
 ---
 
-**Este documento serve como guia completo para a refatoração do site da Soito INC, garantindo uma base sólida, escalável e de alta performance para os próximos anos.** 
+**Este documento serve como guia completo para a refatoração do site da Soito INC, garantindo uma base sólida, escalável e de alta performance para os próximos anos.**

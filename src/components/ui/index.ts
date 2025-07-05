@@ -31,4 +31,4 @@ export { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "./
 export { Tabs, TabsContent, TabsList, TabsTrigger } from "./tabs"
 
 // Componentes especializados (lazy load)
-export type { ChartConfig } from "./chart" 
+export type { ChartConfig } from "./chart"

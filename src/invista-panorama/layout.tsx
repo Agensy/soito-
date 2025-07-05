@@ -27,4 +27,4 @@ export default function InvestaPanoramaLayout({
       {children}
     </div>
   )
-} 
+}

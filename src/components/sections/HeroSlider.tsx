@@ -188,4 +188,4 @@ export function HeroSlider() {
       </button>
     </section>
   )
-} 
+}

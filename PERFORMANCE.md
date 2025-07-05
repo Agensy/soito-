@@ -26,36 +26,36 @@ Este documento detalha as otimizações implementadas e como monitorar a perform
 ## 📊 **Métricas de Impacto**
 
 ### **Antes das Otimizações**
-```
+\`\`\`
 📦 Bundle Size:     2.1MB
 🖼️  Images:         11MB  
 ⚡ TTI:            3.2s
 🎨 LCP:            2.8s
 📱 Mobile Score:   45
-```
+\`\`\`
 
 ### **Após Otimizações**
-```
+\`\`\`
 📦 Bundle Size:     800KB    (-62%)
 🖼️  Images:         3MB      (-73%)  
 ⚡ TTI:            1.8s     (-44%)
 🎨 LCP:            1.2s     (-57%)
 📱 Mobile Score:   78       (+42%)
-```
+\`\`\`
 
 ## 🛠️ **Como Monitorar Performance**
 
 ### **1. Análise Automática**
-```bash
+\`\`\`bash
 # Executar análise completa
 npm run analyze
 
 # Análise + build otimizado
 npm run performance
-```
+\`\`\`
 
 ### **2. Verificações Manuais**
-```bash
+\`\`\`bash
 # Verificar tamanho de imagens grandes
 find public/ -name "*.png" -size +500k -exec ls -lh {} +
 
@@ -64,7 +64,7 @@ grep -r "use client" --include="*.tsx" . | wc -l
 
 # Verificar imports de Framer Motion
 grep -r "framer-motion" --include="*.tsx" . | wc -l
-```
+\`\`\`
 
 ### **3. Ferramentas Externas**
 - **Lighthouse**: Auditoria completa de performance
@@ -92,7 +92,7 @@ grep -r "framer-motion" --include="*.tsx" . | wc -l
 ## 🔧 **Configurações Técnicas**
 
 ### **Next.js Config Otimizada**
-```javascript
+\`\`\`javascript
 // next.config.mjs
 images: {
   unoptimized: false,           // ✅ Otimizações habilitadas
@@ -105,10 +105,10 @@ experimental: {
     'lucide-react'
   ],
 }
-```
+\`\`\`
 
 ### **Font Loading Otimizada**
-```javascript
+\`\`\`javascript
 // Inter font com otimizações
 const inter = Inter({ 
   subsets: ["latin"],
@@ -116,7 +116,7 @@ const inter = Inter({
   preload: true,            // ✅ Preload crítico
   variable: '--font-inter'  // ✅ CSS variable
 })
-```
+\`\`\`
 
 ## 📈 **Próximas Otimizações Recomendadas**
 
@@ -144,7 +144,7 @@ const inter = Inter({
 - 🎨 **LCP**: < 1.5s
 
 ### **Comandos de Verificação**
-```bash
+\`\`\`bash
 # Verificar se há regressões
 npm run analyze | grep -E "(⚠️|❌)"
 
@@ -153,7 +153,7 @@ npm run build | grep "Total"
 
 # Verificar imagens grandes
 npm run analyze | grep "500k"
-```
+\`\`\`
 
 ## 🎯 **Checklist de Manutenção**
 
@@ -176,4 +176,4 @@ npm run analyze | grep "500k"
 
 **Mantido por**: Equipe de Desenvolvimento Soito  
 **Última atualização**: Janeiro 2025  
-**Próxima revisão**: Fevereiro 2025 
+**Próxima revisão**: Fevereiro 2025

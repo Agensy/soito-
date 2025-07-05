@@ -457,4 +457,4 @@ function OpportunitySlide({ content }: { content: any }) {
   )
 }
 
-export default HeroSlider 
+export default HeroSlider

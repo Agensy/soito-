@@ -58,4 +58,4 @@ export function InvestmentNavigation() {
       </div>
     </div>
   )
-} 
+}

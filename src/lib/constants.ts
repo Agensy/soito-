@@ -32,4 +32,4 @@ export const CEO_DATA = {
     "Na Soito, não estamos apenas construindo estruturas físicas – estamos criando legados que moldam positivamente a paisagem urbana e a vida das pessoas por gerações. Este é o compromisso que renovo diariamente: transformar visão em realidade tangível, com excelência inquestionável."
   ],
   ctaText: "CONHEÇA NOSSA TRAJETÓRIA"
-} as const 
+} as const

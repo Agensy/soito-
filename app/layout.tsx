@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   keywords: 'incorporadora, imobiliária, luxo, investimento, apartamentos, São Paulo',
   authors: [{ name: 'SOITO INC' }],
   viewport: 'width=device-width, initial-scale=1',
+    generator: 'v0.dev'
 }
 
 export default function RootLayout({
@@ -29,4 +30,4 @@ export default function RootLayout({
       </body>
     </html>
   )
-} 
+}

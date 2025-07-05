@@ -10,7 +10,7 @@ Site para incorporadora de luxo com estética premium, elegante e sofisticada. T
 ## 🌈 SISTEMA DE CORES (DUAL THEME)
 
 ### **Cores Base (Neutras para ambos os temas):**
-```css
+\`\`\`css
 /* Dourado Luxo - Permanece igual nos dois temas */
 --primary-50: #FEF7E7
 --primary-100: #FDECC4
@@ -19,10 +19,10 @@ Site para incorporadora de luxo com estética premium, elegante e sofisticada. T
 --primary-700: #A8935A
 --primary-800: #8B7A4F
 --primary-900: #6D5F3E
-```
+\`\`\`
 
 ### **🌞 LIGHT MODE:**
-```css
+\`\`\`css
 :root {
   /* Backgrounds */
   --background: #FFFFFF
@@ -47,10 +47,10 @@ Site para incorporadora de luxo com estética premium, elegante e sofisticada. T
   --shadow-heavy: 0 20px 25px -5px rgba(0, 0, 0, 0.1)
   --shadow-golden: 0 8px 32px rgba(191, 168, 107, 0.3)
 }
-```
+\`\`\`
 
 ### **🌙 DARK MODE:**
-```css
+\`\`\`css
 .dark {
   /* Backgrounds */
   --background: #0A0A0A
@@ -75,7 +75,7 @@ Site para incorporadora de luxo com estética premium, elegante e sofisticada. T
   --shadow-heavy: 0 20px 25px -5px rgba(0, 0, 0, 0.4)
   --shadow-golden: 0 8px 32px rgba(212, 192, 138, 0.4)
 }
-```
+\`\`\`
 
 ### **Uso das Cores:**
 - **Dourado (#BFA86B/#D4C08A):** CTAs principais, destaques, sempre igual
@@ -87,7 +87,7 @@ Site para incorporadora de luxo com estética premium, elegante e sofisticada. T
 ## 📝 TIPOGRAFIA
 
 ### **Fontes:**
-```css
+\`\`\`css
 /* Família Principal */
 font-family: 'Inter', 'system-ui', 'sans-serif'
 
@@ -96,10 +96,10 @@ font-family: 'Playfair Display', 'serif'
 
 /* Código/Dados */
 font-family: 'JetBrains Mono', 'monospace'
-```
+\`\`\`
 
 ### **Escala Tipográfica:**
-```css
+\`\`\`css
 /* Tamanhos */
 --text-xs: 0.75rem    /* 12px */
 --text-sm: 0.875rem   /* 14px */
@@ -118,7 +118,7 @@ font-family: 'JetBrains Mono', 'monospace'
 --font-medium: 500
 --font-semibold: 600
 --font-bold: 700
-```
+\`\`\`
 
 ### **Hierarquia:**
 - **H1:** text-6xl, font-light, Playfair Display
@@ -132,7 +132,7 @@ font-family: 'JetBrains Mono', 'monospace'
 ## 🎭 EFEITOS VISUAIS (DUAL THEME)
 
 ### **🌟 Theme Toggle Component:**
-```jsx
+\`\`\`jsx
 function ThemeToggle() {
   return (
     <button className="relative w-14 h-8 bg-gray-200 dark:bg-gray-700 rounded-full p-1 transition-colors duration-300">
@@ -142,10 +142,10 @@ function ThemeToggle() {
     </button>
   )
 }
-```
+\`\`\`
 
 ### **Glass Morphism:**
-```css
+\`\`\`css
 /* Light Mode Glass */
 .glass-light {
   background: var(--background-glass);
@@ -170,10 +170,10 @@ function ThemeToggle() {
   border-radius: 16px;
   transition: all 0.3s ease;
 }
-```
+\`\`\`
 
 ### **Gradientes (Theme-Aware):**
-```css
+\`\`\`css
 /* Gradiente Principal - Sempre igual */
 .gradient-primary {
   background: linear-gradient(135deg, #BFA86B 0%, #D4C08A 100%);
@@ -201,10 +201,10 @@ function ThemeToggle() {
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
-```
+\`\`\`
 
 ### **Sombras Adaptativas:**
-```css
+\`\`\`css
 /* Sombras Light Mode */
 :root {
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
@@ -231,14 +231,14 @@ function ThemeToggle() {
 .glow-dark {
   box-shadow: 0 0 30px rgba(212, 192, 138, 0.5);
 }
-```
+\`\`\`
 
 ---
 
 ## 🧩 COMPONENTES UI (DUAL THEME)
 
 ### **Botões Adaptativos:**
-```css
+\`\`\`css
 /* Primary Button - Igual nos dois temas */
 .btn-primary {
   background: linear-gradient(135deg, #BFA86B 0%, #D4C08A 100%);
@@ -295,10 +295,10 @@ function ThemeToggle() {
   font-weight: 600;
   transition: all 0.3s ease;
 }
-```
+\`\`\`
 
 ### **Cards Temáticos:**
-```css
+\`\`\`css
 /* Universal Card - Adapta automaticamente */
 .card-adaptive {
   background: var(--background);
@@ -352,10 +352,10 @@ function ThemeToggle() {
   background: rgba(191, 168, 107, 0.05);
   transform: translateY(-4px);
 }
-```
+\`\`\`
 
 ### **Inputs Temáticos:**
-```css
+\`\`\`css
 /* Universal Input */
 .input-adaptive {
   background: var(--background);
@@ -405,10 +405,10 @@ function ThemeToggle() {
   box-shadow: 0 0 0 3px rgba(191, 168, 107, 0.1);
   outline: none;
 }
-```
+\`\`\`
 
 ### **Navigation Components:**
-```css
+\`\`\`css
 /* Header */
 .header-adaptive {
   background: var(--background-glass);
@@ -444,14 +444,14 @@ function ThemeToggle() {
   box-shadow: var(--shadow-heavy);
   backdrop-filter: blur(20px);
 }
-```
+\`\`\`
 
 ---
 
 ## ✨ ANIMAÇÕES E TRANSIÇÕES
 
 ### **Animações Base:**
-```css
+\`\`\`css
 /* Fade In Up */
 @keyframes fadeInUp {
   from {
@@ -491,10 +491,10 @@ function ThemeToggle() {
   0%, 100% { transform: translateY(0px); }
   50% { transform: translateY(-10px); }
 }
-```
+\`\`\`
 
 ### **Transições:**
-```css
+\`\`\`css
 /* Transições Padrão */
 .transition-smooth { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
 .transition-bounce { transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
@@ -508,14 +508,14 @@ function ThemeToggle() {
 .hover-glow:hover {
   box-shadow: 0 0 30px rgba(191, 168, 107, 0.5);
 }
-```
+\`\`\`
 
 ---
 
 ## 📐 LAYOUT E ESPAÇAMENTO
 
 ### **Grid System:**
-```css
+\`\`\`css
 /* Container Sizes */
 .container-sm { max-width: 640px; }
 .container-md { max-width: 768px; }
@@ -533,24 +533,24 @@ function ThemeToggle() {
 --space-16: 4rem     /* 64px */
 --space-20: 5rem     /* 80px */
 --space-24: 6rem     /* 96px */
-```
+\`\`\`
 
 ### **Breakpoints:**
-```css
+\`\`\`css
 /* Mobile First */
 @media (min-width: 640px)  { /* sm */ }
 @media (min-width: 768px)  { /* md */ }
 @media (min-width: 1024px) { /* lg */ }
 @media (min-width: 1280px) { /* xl */ }
 @media (min-width: 1536px) { /* 2xl */ }
-```
+\`\`\`
 
 ---
 
 ## 🖼️ ELEMENTOS ESPECÍFICOS (DUAL THEME)
 
 ### **Seção CEO (Sempre Dark):**
-```css
+\`\`\`css
 .ceo-section {
   background: linear-gradient(135deg, #0A0A0A 0%, #1F1F23 50%, #0A0A0A 100%);
   padding: 80px 0;
@@ -603,10 +603,10 @@ function ThemeToggle() {
   letter-spacing: 2px;
   box-shadow: 0 8px 32px rgba(191, 168, 107, 0.3);
 }
-```
+\`\`\`
 
 ### **Hero Section (Adaptativo):**
-```css
+\`\`\`css
 /* Hero Light Mode */
 .hero-light {
   background: linear-gradient(135deg, 
@@ -670,10 +670,10 @@ function ThemeToggle() {
   text-align: center;
   padding: 2rem;
 }
-```
+\`\`\`
 
 ### **Stats Cards (Adaptativo):**
-```css
+\`\`\`css
 .stats-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -743,10 +743,10 @@ function ThemeToggle() {
   color: #BFA86B;
   margin-bottom: 1rem;
 }
-```
+\`\`\`
 
 ### **Seções Temáticas:**
-```css
+\`\`\`css
 /* Section Container */
 .section-adaptive {
   background: var(--background);
@@ -791,14 +791,14 @@ function ThemeToggle() {
   margin: 0 auto 2rem;
   border-radius: 2px;
 }
-```
+\`\`\`
 
 ---
 
 ## 🎪 MICRO-INTERAÇÕES
 
 ### **Loading States:**
-```css
+\`\`\`css
 .loading-spinner {
   border: 3px solid rgba(191, 168, 107, 0.3);
   border-top: 3px solid #BFA86B;
@@ -812,10 +812,10 @@ function ThemeToggle() {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
-```
+\`\`\`
 
 ### **Success States:**
-```css
+\`\`\`css
 .success-checkmark {
   color: #10B981;
   animation: successPulse 0.6s ease-in-out;
@@ -826,7 +826,7 @@ function ThemeToggle() {
   50% { transform: scale(1.2); }
   100% { transform: scale(1); }
 }
-```
+\`\`\`
 
 ---
 
@@ -840,7 +840,7 @@ function ThemeToggle() {
 5. **CTAs:** Botões full-width em mobile
 
 ### **Mobile Specific (Dual Theme):**
-```css
+\`\`\`css
 @media (max-width: 767px) {
   .hero-text { 
     font-size: 2.5rem; 
@@ -914,14 +914,14 @@ function ThemeToggle() {
     transition-duration: 0.01ms !important;
   }
 }
-```
+\`\`\`
 
 ---
 
 ## 🎨 INSTRUÇÕES PARA V0 (DUAL THEME)
 
 ### **🌟 Theme System Implementation:**
-```jsx
+\`\`\`jsx
 // Sempre incluir o provider de tema
 "use client"
 import { ThemeProvider } from 'next-themes'
@@ -933,34 +933,34 @@ export function Providers({ children }) {
     </ThemeProvider>
   )
 }
-```
+\`\`\`
 
 ### **Prompts Recomendados para Dark/Light Mode:**
 
 #### **Hero Section:**
-```
+\`\`\`
 "Crie um hero section para incorporadora de luxo com suporte a dark/light mode usando CSS variables. Background adaptativo (branco no light, preto no dark), tipografia Inter e Playfair Display, botão dourado (#BFA86B) que permanece igual nos dois temas, glass morphism adaptativo, e toggle de tema no canto superior direito."
-```
+\`\`\`
 
 #### **CEO Section:**
-```
+\`\`\`
 "Desenvolva uma seção de CEO que é sempre dark (independente do tema) com foto circular (320px) com borda dourada, background preto com padrão arquitetônico sutil, texto em grid 2 colunas, badge dourado com nome, e efeitos hover na foto. Use Tailwind dark: classes."
-```
+\`\`\`
 
 #### **Stats Cards:**
-```
+\`\`\`
 "Monte cards de estatísticas com dark/light mode support usando CSS variables, glass effect adaptativo, números grandes com gradiente dourado (sempre igual), ícones Lucide, hover com elevação e glow dourado, background que muda conforme tema, e layout responsivo."
-```
+\`\`\`
 
 #### **Navigation:**
-```
+\`\`\`
 "Crie uma navegação adaptativa com dark/light mode toggle, background glass com backdrop-blur, links que mudam cor conforme tema, logo que adapta, menu mobile com overlay adaptativo, e transições suaves entre temas."
-```
+\`\`\`
 
 #### **Form Components:**
-```
+\`\`\`
 "Desenvolva formulários com inputs adaptativos (background e border mudam conforme tema), labels e placeholders com cores temáticas, botão submit dourado (sempre igual), validação visual, e glass effects."
-```
+\`\`\`
 
 ### **Elementos SEMPRE Incluir:**
 
@@ -985,7 +985,7 @@ export function Providers({ children }) {
 - Success/error states temáticos
 
 ### **CSS Variables Template:**
-```css
+\`\`\`css
 /* Sempre incluir estas variáveis */
 :root {
   --primary-500: #BFA86B;
@@ -1003,15 +1003,15 @@ export function Providers({ children }) {
   --text-primary: #FFFFFF;
   /* ... outras variáveis dark */
 }
-```
+\`\`\`
 
 ### **Tailwind Classes Essenciais:**
-```
+\`\`\`
 bg-background text-text-primary
 dark:bg-background dark:text-text-primary
 border-border-primary dark:border-border-primary
 shadow-light dark:shadow-heavy
-```
+\`\`\`
 
 ### **Checklist para V0:**
 - [ ] Theme toggle component incluído
@@ -1051,4 +1051,4 @@ Um sistema de design premium, elegante e completamente adaptativo que mantém a 
 
 ---
 
-**Este documento garante consistência visual total em todos os componentes gerados pelo v0, com suporte completo para dark/light mode mantendo a identidade premium da Soito INC.** 
+**Este documento garante consistência visual total em todos os componentes gerados pelo v0, com suporte completo para dark/light mode mantendo a identidade premium da Soito INC.**

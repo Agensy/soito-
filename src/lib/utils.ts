@@ -52,4 +52,4 @@ export function useInView() {
   }, [ref])
 
   return [setRef, isInView] as const
-} 
+}

@@ -70,4 +70,4 @@ export async function sendToWebhook(payload: WebhookPayload): Promise<boolean> {
 
   console.error('Falha ao enviar webhook após todas as tentativas:', lastError)
   return false
-} 
+}

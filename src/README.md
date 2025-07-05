@@ -14,13 +14,13 @@ Este é o design system completo da **SOITO INC**, uma incorporadora de luxo que
 ## 🎨 Paleta de Cores
 
 ### Cores Primárias (Dourado SOITO)
-```css
+\`\`\`css
 --primary-500: #BFA86B  /* Dourado principal */
 --primary-600: #D4C08A  /* Dourado claro */
-```
+\`\`\`
 
 ### Temas Adaptativos
-```css
+\`\`\`css
 /* Light Mode */
 --background: #FFFFFF
 --text-primary: #0A0A0A
@@ -30,16 +30,16 @@ Este é o design system completo da **SOITO INC**, uma incorporadora de luxo que
 --background: #0A0A0A
 --text-primary: #FFFFFF
 --border-primary: #404040
-```
+\`\`\`
 
 ## 🧩 Componentes Base
 
 ### Button
-```tsx
+\`\`\`tsx
 <Button variant="primary" size="lg">
   Call to Action
 </Button>
-```
+\`\`\`
 
 **Variantes:**
 - `primary`: Gradiente dourado com hover effects
@@ -51,11 +51,11 @@ Este é o design system completo da **SOITO INC**, uma incorporadora de luxo que
 - `sm`, `md`, `lg`, `xl`
 
 ### Card
-```tsx
+\`\`\`tsx
 <Card className="glass-adaptive">
   Conteúdo do card
 </Card>
-```
+\`\`\`
 
 **Classes Utilitárias:**
 - `glass-adaptive`: Glass morphism
@@ -63,25 +63,25 @@ Este é o design system completo da **SOITO INC**, uma incorporadora de luxo que
 - `cef-section`: Sempre azul
 
 ### Input
-```tsx
+\`\`\`tsx
 <Input 
   label="Nome completo"
   placeholder="Digite seu nome"
   error="Campo obrigatório"
 />
-```
+\`\`\`
 
 ### Badge
-```tsx
+\`\`\`tsx
 <Badge variant="primary" size="lg">
   SOITO INC
 </Badge>
-```
+\`\`\`
 
 ## 🎭 Animações
 
 ### Framer Motion
-```tsx
+\`\`\`tsx
 import { motion } from 'framer-motion'
 
 <motion.div
@@ -91,35 +91,35 @@ import { motion } from 'framer-motion'
 >
   Conteúdo animado
 </motion.div>
-```
+\`\`\`
 
 ### CSS Animations
-```css
+\`\`\`css
 .animate-fade-in-up    /* Fade in de baixo para cima */
 .animate-slide-in-right /* Slide da direita */
 .animate-scale-in      /* Scale in */
 .animate-float         /* Float contínuo */
 .animate-pulse-golden  /* Pulse dourado */
-```
+\`\`\`
 
 ## 📱 Responsividade
 
 ### Breakpoints
-```css
+\`\`\`css
 sm: 640px   /* Mobile landscape */
 md: 768px   /* Tablet */
 lg: 1024px  /* Desktop */
 xl: 1280px  /* Large desktop */
 2xl: 1536px /* Extra large */
-```
+\`\`\`
 
 ### Mobile-First
-```tsx
+\`\`\`tsx
 // Exemplo de grid responsivo
 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
   {/* Cards */}
 </div>
-```
+\`\`\`
 
 ## 🎯 Seções Principais
 
@@ -144,7 +144,7 @@ xl: 1280px  /* Large desktop */
 ## 🛠️ Utilitários
 
 ### cn() - Class Names
-```tsx
+\`\`\`tsx
 import { cn } from '@/lib/utils'
 
 <div className={cn(
@@ -152,35 +152,35 @@ import { cn } from '@/lib/utils'
   condition && "conditional-class",
   className
 )}>
-```
+\`\`\`
 
 ### useInView - Intersection Observer
-```tsx
+\`\`\`tsx
 import { useInView } from '@/lib/utils'
 
 const [ref, isInView] = useInView()
-```
+\`\`\`
 
 ## 🎨 Classes CSS Utilitárias
 
 ### Gradientes
-```css
+\`\`\`css
 .text-gradient          /* Texto com gradiente dourado */
 .glass-adaptive         /* Glass morphism adaptativo */
 .transition-smooth      /* Transição suave */
-```
+\`\`\`
 
 ### Sombras
-```css
+\`\`\`css
 .shadow-light           /* Sombra leve */
 .shadow-medium          /* Sombra média */
 .shadow-heavy           /* Sombra pesada */
 .shadow-golden          /* Sombra dourada */
-```
+\`\`\`
 
 ## 📁 Estrutura de Arquivos
 
-```
+\`\`\`
 src/
 ├── components/
 │   ├── ui/              # Componentes base
@@ -196,31 +196,31 @@ src/
     ├── layout.tsx       # Layout principal
     ├── page.tsx         # Página inicial
     └── globals.css      # Estilos globais
-```
+\`\`\`
 
 ## 🚀 Como Usar
 
 ### 1. Instalação
-```bash
+\`\`\`bash
 npm install
 npm run dev
-```
+\`\`\`
 
 ### 2. Importar Componentes
-```tsx
+\`\`\`tsx
 import { Button, Card, Badge } from '@/components/ui'
 import { Header } from '@/components/layout'
 import { HeroSlider, CEOSection } from '@/components/sections'
-```
+\`\`\`
 
 ### 3. Usar Theme Provider
-```tsx
+\`\`\`tsx
 import { ThemeProvider } from '@/components/theme'
 
 <ThemeProvider defaultTheme="dark">
   {children}
 </ThemeProvider>
-```
+\`\`\`
 
 ## 🎯 Características Premium
 
@@ -248,21 +248,21 @@ import { ThemeProvider } from '@/components/theme'
 
 ### Cores
 Edite as variáveis CSS em `globals.css`:
-```css
+\`\`\`css
 :root {
   --primary-500: #BFA86B;
   --primary-600: #D4C08A;
 }
-```
+\`\`\`
 
 ### Animações
 Configure no `tailwind.config.ts`:
-```js
+\`\`\`js
 animation: {
   'fade-in-up': 'fadeInUp 0.6s ease-out',
   'slide-in-right': 'slideInRight 0.8s ease-out',
 }
-```
+\`\`\`
 
 ## 📊 Performance
 
@@ -304,4 +304,4 @@ animation: {
 
 ---
 
-**Desenvolvido com ❤️ para a SOITO INC** 
+**Desenvolvido com ❤️ para a SOITO INC**

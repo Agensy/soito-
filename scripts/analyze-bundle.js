@@ -163,4 +163,4 @@ function main() {
   console.log('✅ Análise completa! Execute novamente após implementar otimizações.');
 }
 
-main(); 
+main();
