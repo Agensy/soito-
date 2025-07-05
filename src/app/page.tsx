@@ -1,6 +1,7 @@
-import { Header } from '../src/components/layout/Header'
-import { HeroSlider } from '../src/components/sections/HeroSlider'
-import { CEOSection } from '../src/components/sections/CEOSection'
+import { Header } from '../components/layout/Header'
+import { HeroSlider } from '../components/sections/HeroSlider'
+import { CEOSection } from '../components/sections/CEOSection'
+import { Building2, Home, Phone, Mail, MapPin } from 'lucide-react'
 
 export default function HomePage() {
   return (
@@ -8,7 +9,7 @@ export default function HomePage() {
       <Header />
       
       {/* Hero Section */}
-      <section id="home" className="pt-16 sm:pt-20">
+      <section id="home">
         <HeroSlider />
       </section>
 
@@ -33,7 +34,7 @@ export default function HomePage() {
             {/* Project Card 1 */}
             <div className="group relative overflow-hidden rounded-2xl bg-background-secondary border border-border-primary hover:border-primary-500 transition-smooth hover:-translate-y-2 hover:shadow-heavy">
               <div className="aspect-[4/3] bg-gradient-to-br from-primary-500/20 to-primary-600/20 flex items-center justify-center">
-                <div className="text-6xl">🏢</div>
+                <Building2 className="w-16 h-16 text-primary-500" />
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold text-text-primary mb-2">Panorama Taubaté</h3>
@@ -50,7 +51,7 @@ export default function HomePage() {
             {/* Project Card 2 */}
             <div className="group relative overflow-hidden rounded-2xl bg-background-secondary border border-border-primary hover:border-primary-500 transition-smooth hover:-translate-y-2 hover:shadow-heavy">
               <div className="aspect-[4/3] bg-gradient-to-br from-primary-500/20 to-primary-600/20 flex items-center justify-center">
-                <div className="text-6xl">🏠</div>
+                <Home className="w-16 h-16 text-primary-500" />
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold text-text-primary mb-2">Residencial Luxo</h3>
@@ -67,7 +68,7 @@ export default function HomePage() {
             {/* Project Card 3 */}
             <div className="group relative overflow-hidden rounded-2xl bg-background-secondary border border-border-primary hover:border-primary-500 transition-smooth hover:-translate-y-2 hover:shadow-heavy">
               <div className="aspect-[4/3] bg-gradient-to-br from-primary-500/20 to-primary-600/20 flex items-center justify-center">
-                <div className="text-6xl">🏢</div>
+                <Building2 className="w-16 h-16 text-primary-500" />
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold text-text-primary mb-2">Corporate Center</h3>
@@ -96,17 +97,17 @@ export default function HomePage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
             <div className="text-center">
-              <div className="text-4xl mb-4">📞</div>
+              <Phone className="w-10 h-10 mb-4 text-primary-500" />
               <h3 className="text-lg font-bold text-text-primary mb-2">Telefone</h3>
               <p className="text-text-secondary">(11) 99999-9999</p>
             </div>
             <div className="text-center">
-              <div className="text-4xl mb-4">📧</div>
+              <Mail className="w-10 h-10 mb-4 text-primary-500" />
               <h3 className="text-lg font-bold text-text-primary mb-2">Email</h3>
               <p className="text-text-secondary">contato@soito.com.br</p>
             </div>
             <div className="text-center">
-              <div className="text-4xl mb-4">📍</div>
+              <MapPin className="w-10 h-10 mb-4 text-primary-500" />
               <h3 className="text-lg font-bold text-text-primary mb-2">Endereço</h3>
               <p className="text-text-secondary">São Paulo, SP</p>
             </div>

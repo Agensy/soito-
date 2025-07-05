@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
-import { ThemeProvider } from '../src/components/theme/ThemeProvider'
-import './globals.css'
+import { ThemeProvider } from '../components/theme/ThemeProvider'
+import '../app/globals.css'
 
 export const metadata: Metadata = {
   title: 'SOITO INC - Incorporadora de Luxo',
