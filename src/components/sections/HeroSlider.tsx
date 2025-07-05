@@ -16,7 +16,7 @@ interface SlideData {
     subtitle?: string
     ctas?: Array<{
       text: string
-      variant: 'primary' | 'secondary' | 'ghost' | 'outline'
+      variant: 'primary' | 'ghost' | 'outline'
       icon?: LucideIcon
     }>
     stats?: Array<{
@@ -37,7 +37,7 @@ const slides: SlideData[] = [
       subtitle: '25 anos de expertise em incorporação de luxo com projetos que elevam o padrão urbanístico das cidades.',
       ctas: [
         { text: 'Conheça Nossos Projetos', variant: 'primary' },
-        { text: 'Fale com um Consultor', variant: 'secondary' }
+        { text: 'Fale com um Consultor', variant: 'outline' }
       ],
       stats: [
         { icon: Building2, number: '150+', label: 'Projetos Entregues' },
@@ -55,7 +55,7 @@ const slides: SlideData[] = [
       subtitle: 'Apartamentos de 2 dormitórios com rentabilidade de 19,1% a.a. em localização estratégica.',
       ctas: [
         { text: 'Simular Investimento', variant: 'primary' },
-        { text: 'Ver Localização', variant: 'ghost' }
+        { text: 'Ver Localização', variant: 'outline' }
       ],
       stats: [
         { icon: TrendingUp, number: '19.1%', label: 'Rentabilidade Anual' },

@@ -13,13 +13,20 @@ const config: Config = {
       colors: {
         // Dourado SOITO (sempre igual nos dois temas)
         primary: {
+          DEFAULT: '#BFA86B',
+          foreground: '#ffffff',
           50: '#FEF7E7',
           100: '#FDECC4',
-          500: '#BFA86B',
+          500: '#BFA86B',  // mesma cor da variante DEFAULT
           600: '#D4C08A',
           700: '#A8935A',
           800: '#8B7A4F',
           900: '#6D5F3E',
+        },
+        // Cor secundária para botões e componentes neutros
+        secondary: {
+          DEFAULT: '#383838',
+          foreground: '#ffffff',
         },
         // Backgrounds adaptativos
         background: 'var(--background)',
