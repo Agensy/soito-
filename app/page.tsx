@@ -1,13 +1,14 @@
-import { Header } from '../src/components/layout/Header'
-import { HeroSlider } from '../src/components/sections/HeroSlider'
-import { CEOSection } from '../src/components/sections/CEOSection'
-import { Footer } from '../src/components/layout/Footer'
+import { Header } from "../src/components/layout/Header"
+import { HeroSlider } from "../src/components/sections/HeroSlider"
+import { CEOSection } from "../src/components/sections/CEOSection"
+import { Footer } from "../src/components/layout/Footer"
+import { BuildingIcon, HomeIcon } from "lucide-react"
 
 export default function HomePage() {
   return (
     <main className="min-h-screen bg-background text-text-primary">
       <Header />
-      
+
       {/* Hero Section */}
       <section id="home" className="pt-16 sm:pt-20">
         <HeroSlider />
@@ -34,7 +35,7 @@ export default function HomePage() {
             {/* Project Card 1 */}
             <div className="group relative overflow-hidden rounded-2xl bg-background-secondary border border-border-primary hover:border-primary-500 transition-smooth hover:-translate-y-2 hover:shadow-heavy">
               <div className="aspect-[4/3] bg-gradient-to-br from-primary-500/20 to-primary-600/20 flex items-center justify-center">
-                <div className="text-6xl">🏢</div>
+                <BuildingIcon className="h-16 w-16 text-white" />
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold text-text-primary mb-2">Panorama Taubaté</h3>
@@ -51,13 +52,11 @@ export default function HomePage() {
             {/* Project Card 2 */}
             <div className="group relative overflow-hidden rounded-2xl bg-background-secondary border border-border-primary hover:border-primary-500 transition-smooth hover:-translate-y-2 hover:shadow-heavy">
               <div className="aspect-[4/3] bg-gradient-to-br from-primary-500/20 to-primary-600/20 flex items-center justify-center">
-                <div className="text-6xl">🏠</div>
+                <HomeIcon className="h-16 w-16 text-white" />
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold text-text-primary mb-2">Residencial Luxo</h3>
-                <p className="text-text-secondary mb-4">
-                  Apartamentos de alto padrão com acabamentos premium.
-                </p>
+                <p className="text-text-secondary mb-4">Apartamentos de alto padrão com acabamentos premium.</p>
                 <div className="flex items-center justify-between">
                   <span className="text-primary-500 font-bold">R$ 8.500/m²</span>
                   <span className="text-sm text-text-muted">Em Construção</span>
@@ -68,13 +67,11 @@ export default function HomePage() {
             {/* Project Card 3 */}
             <div className="group relative overflow-hidden rounded-2xl bg-background-secondary border border-border-primary hover:border-primary-500 transition-smooth hover:-translate-y-2 hover:shadow-heavy">
               <div className="aspect-[4/3] bg-gradient-to-br from-primary-500/20 to-primary-600/20 flex items-center justify-center">
-                <div className="text-6xl">🏢</div>
+                <BuildingIcon className="h-16 w-16 text-white" />
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold text-text-primary mb-2">Corporate Center</h3>
-                <p className="text-text-secondary mb-4">
-                  Complexo empresarial com salas comerciais e coworking.
-                </p>
+                <p className="text-text-secondary mb-4">Complexo empresarial com salas comerciais e coworking.</p>
                 <div className="flex items-center justify-between">
                   <span className="text-primary-500 font-bold">R$ 12.000/m²</span>
                   <span className="text-sm text-text-muted">Planejamento</span>

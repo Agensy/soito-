@@ -1,27 +1,13 @@
 "use client"
 
-import { motion } from 'framer-motion'
-import Image from 'next/image'
-import { Button } from '@/components/ui/button'
-import { Card } from '@/components/ui/card'
-import { Badge } from '@/components/ui/badge'
-import { cn } from '../../lib/utils'
-import { Building2, DollarSign, Star } from 'lucide-react'
-
-const CEO_DATA = {
-  name: "FABIO SOITO",
-  title: "FOUNDER | CEO",
-  photo: "/fabio-soito-ceo.jpg",
-  photoAlt: "Fábio Soito - CEO e Fundador da SOITO INC",
-  headline: "Visão e Experiência que Transformam o Mercado Imobiliário.",
-  content: [
-    "À frente da Soito Incorporadora, trago 25 anos de trajetória executiva onde a expertise jurídica se alia à visão estratégica e ao profundo conhecimento do mercado imobiliário. Esta combinação única me permite identificar e capturar oportunidades excepcionais para nossos investidores e clientes.",
-    "Construí minha carreira desenvolvendo a capacidade de enxergar além do óbvio – transformando terrenos em empreendimentos que não apenas valorizam o patrimônio, mas também elevam o padrão urbanístico das cidades onde atuamos. Cada projeto da Soito Incorporadora nasce de uma análise criteriosa e se desenvolve com rigor técnico incomparável.",
-    "Nossa filosofia de trabalho une tradição e inovação. Aplicamos processos consistentes de governança e conformidade legal, enquanto constantemente buscamos soluções criativas para os desafios do setor. Esta abordagem equilibrada nos permite entregar empreendimentos que se destacam tanto pela solidez quanto pela ousadia arquitetônica.",
-    "Na Soito, não estamos apenas construindo estruturas físicas – estamos criando legados que moldam positivamente a paisagem urbana e a vida das pessoas por gerações. Este é o compromisso que renovo diariamente: transformar visão em realidade tangível, com excelência inquestionável."
-  ],
-  ctaText: "CONHEÇA NOSSA TRAJETÓRIA"
-}
+import { motion } from "framer-motion"
+import Image from "next/image"
+import { Button } from "@/components/ui/button"
+import { Card } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
+import { cn } from "../../lib/utils"
+import { Building2, DollarSign, Star } from "lucide-react"
+import { CEO_DATA } from "../../lib/constants"
 
 export function CEOSection() {
   return (
@@ -59,19 +45,23 @@ export function CEOSection() {
               <div className="relative z-10">
                 <div className="relative w-full aspect-[4/5] rounded-2xl overflow-hidden mb-6">
                   <Image
-                    src={CEO_DATA.photo}
+                    src={CEO_DATA.photo || "/placeholder.svg"}
                     alt={CEO_DATA.photoAlt}
                     fill
                     className="object-cover"
                     priority
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                  {/* Badge com nome e título sobre a foto */}
+                  <div className="absolute bottom-0 left-0 right-0 p-4 flex flex-col items-center justify-center">
+                    <div className="inline-block px-6 py-2 rounded-full bg-gradient-to-r from-primary-500 to-primary-600 mb-2 shadow-lg">
+                      <h3 className="text-xl font-bold text-black">{CEO_DATA.name}</h3>
+                    </div>
+                    <p className="text-white font-medium text-base">{CEO_DATA.title}</p>
+                  </div>
                 </div>
-                
-                <div className="text-center">
-                  <h3 className="text-2xl font-bold text-white mb-2">{CEO_DATA.name}</h3>
-                  <p className="text-primary-500 font-medium">{CEO_DATA.title}</p>
-                </div>
+
+                {/* O bloco de texto original foi movido para dentro do contêiner da imagem */}
               </div>
             </Card>
           </motion.div>
@@ -92,9 +82,7 @@ export function CEOSection() {
                 transition={{ duration: 0.6, delay: 0.6 + index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <p className="text-lg text-gray-300 leading-relaxed">
-                  {paragraph}
-                </p>
+                <p className="text-lg text-gray-300 leading-relaxed">{paragraph}</p>
               </motion.div>
             ))}
 
@@ -110,7 +98,7 @@ export function CEOSection() {
                 size="lg"
                 className={cn(
                   "border-primary-500 text-primary-500 hover:bg-primary-500 hover:text-white",
-                  "bg-gradient-to-r from-primary-500 to-primary-600 text-white border-0"
+                  "bg-gradient-to-r from-primary-500 to-primary-600 text-white border-0",
                 )}
               >
                 {CEO_DATA.ctaText}
@@ -133,13 +121,13 @@ export function CEOSection() {
               <div className="text-3xl font-bold text-primary-500 mb-2">25</div>
               <div className="text-gray-300">Anos de Experiência</div>
             </Card>
-            
+
             <Card className="p-8 glass-adaptive backdrop-blur-[10px] text-center">
               <DollarSign className="w-10 h-10 mb-4 text-primary-500" />
               <div className="text-3xl font-bold text-primary-500 mb-2">R$ 2.5B</div>
               <div className="text-gray-300">Valor em Desenvolvimento</div>
             </Card>
-            
+
             <Card className="p-8 glass-adaptive backdrop-blur-[10px] text-center">
               <Star className="w-10 h-10 mb-4 text-primary-500" />
               <div className="text-3xl font-bold text-primary-500 mb-2">98%</div>

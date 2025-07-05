@@ -1,5 +1,5 @@
-import Image from 'next/image'
-import React from 'react'
+import Image from "next/image"
+import type React from "react"
 
 export const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear()
@@ -10,15 +10,13 @@ export const Footer: React.FC = () => {
           {/* Logo e descrição */}
           <div>
             <Image
-              src="/logo-soito.svg"
+              src="/images/logo-white.png"
               alt="SOITO INC Logo"
               width={160}
               height={48}
               className="mb-4 w-auto h-12"
             />
-            <p className="text-gray-400 max-w-xs">
-              Transformando visões em realidade imobiliária há 25 anos.
-            </p>
+            <p className="text-gray-400 max-w-xs">Transformando visões em realidade imobiliária há 25 anos.</p>
           </div>
 
           {/* Empresa */}
@@ -92,4 +90,4 @@ export const Footer: React.FC = () => {
       </div>
     </footer>
   )
-} 
+}
