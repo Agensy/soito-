@@ -25,3 +25,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# submodule projects
+moradadobosque-8s/
+
+# OS files
+.DS_Store
