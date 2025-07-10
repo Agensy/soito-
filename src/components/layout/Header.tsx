@@ -10,7 +10,7 @@ const navigation = [
   { name: "Início", href: "#home" },
   { name: "Sobre", href: "#about" },
   { name: "Projetos", href: "#projects" },
-  { name: "Investimentos", href: "#investments" },
+  { name: "Invista", href: "/invista" },
   { name: "Contato", href: "#contact" },
 ]
 
@@ -45,6 +45,8 @@ export function Header() {
                 {item.name}
               </motion.a>
             ))}
+            
+
           </nav>
 
           {/* Right Side */}
@@ -108,6 +110,8 @@ export function Header() {
                 {item.name}
               </a>
             ))}
+
+            
             <div className="px-4 pt-2">
               <Button variant="primary" size="sm" className="w-full hover:shadow-golden">
                 Fale Conosco

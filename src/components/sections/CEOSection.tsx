@@ -6,7 +6,6 @@ import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { cn } from "../../lib/utils"
-import { Building2, DollarSign, Star } from "lucide-react"
 import { CEO_DATA } from "../../lib/constants"
 
 export function CEOSection() {
@@ -107,34 +106,7 @@ export function CEOSection() {
           </motion.div>
         </div>
 
-        {/* Stats Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          viewport={{ once: true }}
-          className="mt-20"
-        >
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
-            <Card className="p-8 glass-adaptive backdrop-blur-[10px] text-center">
-              <Building2 className="w-10 h-10 mb-4 text-primary-500" />
-              <div className="text-3xl font-bold text-primary-500 mb-2">25</div>
-              <div className="text-gray-300">Anos de Experiência</div>
-            </Card>
-
-            <Card className="p-8 glass-adaptive backdrop-blur-[10px] text-center">
-              <DollarSign className="w-10 h-10 mb-4 text-primary-500" />
-              <div className="text-3xl font-bold text-primary-500 mb-2">R$ 2.5B</div>
-              <div className="text-gray-300">Valor em Desenvolvimento</div>
-            </Card>
-
-            <Card className="p-8 glass-adaptive backdrop-blur-[10px] text-center">
-              <Star className="w-10 h-10 mb-4 text-primary-500" />
-              <div className="text-3xl font-bold text-primary-500 mb-2">98%</div>
-              <div className="text-gray-300">Satisfação dos Clientes</div>
-            </Card>
-          </div>
-        </motion.div>
+        {/* Bloco de estatísticas removido a pedido do cliente */}
       </div>
     </section>
   )

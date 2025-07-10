@@ -13,8 +13,8 @@ export function NavigationMenu() {
   const { theme } = useTheme()
 
   const getWhatsAppMessage = () => {
-    if (pathname === "/invista-panorama") {
-      return "Olá! Tenho interesse no Panorama Taubaté"
+    if (pathname === "/invista") {
+      return "Olá! Tenho interesse em investir"
     }
     return "Olá! Gostaria de mais informações sobre a SOITO INC"
   }
@@ -66,16 +66,16 @@ export function NavigationMenu() {
               Sobre
             </Link>
             <Link
-              href="/invista-panorama"
+              href="/invista"
               className={`transition-colors ${
-                pathname === "/invista-panorama"
+                pathname === "/invista"
                   ? "text-[#BFA86B]"
                   : theme === "dark"
                     ? "text-white hover:text-[#BFA86B]"
                     : "text-black hover:text-[#BFA86B]"
               }`}
             >
-              Panorama Taubaté
+              Invista
             </Link>
             <Link
               href="/#contato"

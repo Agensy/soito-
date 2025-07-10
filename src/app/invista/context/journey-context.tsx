@@ -2,15 +2,15 @@
 
 import { createContext, useContext, useState, useEffect, type ReactNode } from "react"
 
-export type InvestmentStep = {
+export type Step = {
   id: number
   title: string
   completed: boolean
   confirmed: boolean
 }
 
-type InvestmentContextType = {
-  steps: InvestmentStep[]
+type JourneyContextType = {
+  steps: Step[]
   currentStep: number
   goToStep: (step: number) => void
   nextStep: () => void
@@ -19,37 +19,37 @@ type InvestmentContextType = {
   isLastStep: boolean
 }
 
-const initialSteps: InvestmentStep[] = [
-  { id: 1, title: "Oportunidade de Investimento", completed: false, confirmed: false },
-  { id: 2, title: "Simulador de Rentabilidade", completed: false, confirmed: false },
+const initialSteps: Step[] = [
+  { id: 1, title: "Apresentação da Oportunidade", completed: false, confirmed: false },
+  { id: 2, title: "Perfil do Investimento", completed: false, confirmed: false },
   { id: 3, title: "Cronograma do Projeto", completed: false, confirmed: false },
 ]
 
-const InvestmentContext = createContext<InvestmentContextType | undefined>(undefined)
+const JourneyContext = createContext<JourneyContextType | undefined>(undefined)
 
-export function InvestmentProvider({ children }: { children: ReactNode }) {
-  const [steps, setSteps] = useState<InvestmentStep[]>(initialSteps)
+export function JourneyProvider({ children }: { children: ReactNode }) {
+  const [steps, setSteps] = useState<Step[]>(initialSteps)
   const [currentStep, setCurrentStep] = useState(1)
 
   // Load state from localStorage on component mount
   useEffect(() => {
     try {
       if (typeof window !== "undefined") {
-        const savedInvestment = localStorage.getItem("panoramaTaubateInvestment")
-        if (savedInvestment) {
+        const savedJourney = localStorage.getItem("panoramaInvestmentJourney")
+        if (savedJourney) {
           try {
-            const { steps: savedSteps, currentStep: savedCurrentStep } = JSON.parse(savedInvestment)
+            const { steps: savedSteps, currentStep: savedCurrentStep } = JSON.parse(savedJourney)
             if (Array.isArray(savedSteps) && typeof savedCurrentStep === "number") {
               setSteps(savedSteps)
               setCurrentStep(savedCurrentStep)
             }
           } catch (parseError) {
-            console.error("Error parsing saved investment:", parseError)
+            // Error parsing saved journey data
           }
         }
       }
     } catch (storageError) {
-      console.error("Error accessing localStorage:", storageError)
+      // Error accessing localStorage
     }
   }, [])
 
@@ -57,10 +57,10 @@ export function InvestmentProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     try {
       if (typeof window !== "undefined") {
-        localStorage.setItem("panoramaTaubateInvestment", JSON.stringify({ steps, currentStep }))
+        localStorage.setItem("panoramaInvestmentJourney", JSON.stringify({ steps, currentStep }))
       }
     } catch (error) {
-      console.error("Error saving to localStorage:", error)
+      // Error saving to localStorage
     }
   }, [steps, currentStep])
 
@@ -81,7 +81,7 @@ export function InvestmentProvider({ children }: { children: ReactNode }) {
     if (currentStep < steps.length) {
       setSteps((prevSteps) => prevSteps.map((step) => (step.id === currentStep ? { ...step, completed: true } : step)))
       setCurrentStep((prev) => prev + 1)
-      // Scroll to top
+      // Adicionar rolagem para o topo
       window.scrollTo({ top: 0, behavior: "smooth" })
     }
   }
@@ -99,7 +99,7 @@ export function InvestmentProvider({ children }: { children: ReactNode }) {
   const isLastStep = currentStep === steps.length
 
   return (
-    <InvestmentContext.Provider
+    <JourneyContext.Provider
       value={{
         steps,
         currentStep,
@@ -111,14 +111,14 @@ export function InvestmentProvider({ children }: { children: ReactNode }) {
       }}
     >
       {children}
-    </InvestmentContext.Provider>
+    </JourneyContext.Provider>
   )
 }
 
-export function useInvestment() {
-  const context = useContext(InvestmentContext)
+export function useJourney() {
+  const context = useContext(JourneyContext)
   if (context === undefined) {
-    throw new Error("useInvestment must be used within an InvestmentProvider")
+    throw new Error("useJourney must be used within a JourneyProvider")
   }
   return context
-}
+} 

@@ -1,2 +1,7 @@
+export { Header } from '../layout/Header'
 export { HeroSlider } from './HeroSlider'
 export { CEOSection } from './CEOSection'
+export { CompromissoSection } from './CompromissoSection'
+export { InteractiveProjectSection } from './InteractiveProjectSection'
+export { PanoramaHeroSection } from './PanoramaHeroSection'
+export { PanoramaDetailsSection } from './PanoramaDetailsSection'

@@ -1,6 +1,8 @@
 import { Header } from '../components/layout/Header'
 import { HeroSlider } from '../components/sections/HeroSlider'
 import { CEOSection } from '../components/sections/CEOSection'
+import { CompromissoSection } from '../components/sections/CompromissoSection'
+import { InteractiveProjectSection } from '../components/sections/InteractiveProjectSection'
 import { Building2, Home, Phone, Mail, MapPin } from 'lucide-react'
 import { Footer } from '../components/layout/Footer'
 
@@ -17,6 +19,16 @@ export default function HomePage() {
       {/* CEO Section */}
       <section id="about">
         <CEOSection />
+      </section>
+
+      {/* Compromisso Section */}
+      <section id="compromisso">
+        <CompromissoSection />
+      </section>
+
+      {/* Interactive Projects Section */}
+      <section id="projects-interactive">
+        <InteractiveProjectSection />
       </section>
 
       {/* Projects Section */}
